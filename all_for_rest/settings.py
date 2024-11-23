@@ -75,8 +75,7 @@ STORAGES = {
     "default": {
         "BACKEND": "storages.backends.dropbox.DropboxStorage",
         "OPTIONS": {
-            'oauth2_access_token': "sl.CBOu4SXCaRjQlxGyms_tRwdxzx-HiTwOtZZIV3uNSAOkyHpP6odAvlMXMh5EgYf5P5GPwZjaHS7NVDlXBcxCAGepYxg0bX3CGYvk1bD_XtRe-W-sCOMj5LFUqFm5y6x4GIkpID1dAAcU3TuW0I-8QG0",
-            'oauth2_refresh_token': "XYcuQ6lJIUYAAAAAAAAAAbpOzVJNT9cOeO8CL_DwuZQUn_qClaVcNFnmgBK1KMwo",
+            'oauth2_refresh_token': "LLQKRJQEcbMAAAAAAAAAAWp1XhrBzkHIAN_K3OHtVjJ6bpodfUUr7RmYm8jzw9pR",
             'app_secret': "84h180i1qby8ccn",
             'app_key': "z59xzchyohlzt1p",
             'root_path': '/photos/'
@@ -87,7 +86,10 @@ STORAGES = {
     },
 }
 
-DROPBOX_ACCESS_TOKEN = "sl.CBOJdzEBwiB-psaDzgjkj6AEif_MHgixUeFZ0I7LZqE9zlkRcCzvxZu7b6JlNdlajLMdmhzLT7uIF0fuhh2z0mGqFgGaI2Mwd7kI1J-TfSQ-3bDDS7xV3Ui44t7GL5-fk3rFaHkivBDwHYMaUc0fGNs"
+DROPBOX_ACCESS_TOKEN = "sl.CBQCtP3tMBtZz_pLdgT48475k-RpU9AGHNgIFY1TRrtlE2E27G9PU26EyOUoGhEXhYTKhzRV5VSZpMLTMHc_K1pahWeCJUstsEMueZmW4wNCDwXHXwIOB8p1eJCDsm4TZEq6_2rxIKrxPt76jBTmMvk"
+DROPBOX_REFRESH_TOKEN = "LLQKRJQEcbMAAAAAAAAAAWp1XhrBzkHIAN_K3OHtVjJ6bpodfUUr7RmYm8jzw9pR"
+DROPBOX_APP_SECRET = "84h180i1qby8ccn"
+DROPBOX_APP_KEY = "z59xzchyohlzt1p"
 
 WSGI_APPLICATION = 'all_for_rest.wsgi.application'
 
@@ -144,3 +146,6 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# curl -u z59xzchyohlzt1p:84h180i1qby8ccn -d "code=FM6MTmfSYLsAAAAAAAAALnJrPFmR_UU4HjqUszFXwCk&grant_type=authorization_code" -H "Content-Type: application/x-www-form-urlencoded"  -X POST "https://api.dropboxapi.com/oauth2/token"
