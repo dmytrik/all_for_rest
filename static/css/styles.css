@@ -1,0 +1,176 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: #212121;
+}
+
+a {
+    text-decoration: none;
+    display: block;
+    color: inherit;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style-type: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    max-height: 300px;
+}
+
+.wrapper {
+    width: 1200px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 0 auto;
+}
+
+header .wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logo {
+    font-size: 26px;
+    color: darkgoldenrod;
+}
+
+.nav .nav-list {
+    display: flex;
+}
+
+.nav-item:not(:last-child){
+    margin-right: 50px
+}
+
+.nav-link {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    text-align: center;
+    position: relative;
+    font-size: 14px;
+}
+
+.nav-link:hover {
+    color: cornflowerblue;
+}
+
+.nav-link:hover::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    height: 4px;
+    background-color: cornflowerblue;
+}
+
+.section-title {
+    text-align: center;
+}
+
+.section {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.info-list{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.product-list,
+.brand-list,
+.manager-list{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 20px;
+    row-gap: 15px;
+}
+
+.load {
+    display: block;
+    margin: 50px auto 0px auto;
+    background-color: cornflowerblue;
+    color: white;
+    font-size: 24px;
+    padding:20px;
+    border-radius: 20px;
+    border-color:transparent;
+}
+
+.load:hover{
+    cursor: pointer;
+}
+
+.img-container {
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.info-container {
+    padding: 15px;
+}
+
+.product-info,
+.manager-info{
+    font-size: 22px;
+    text-align: center;
+}
+
+.product-info:not(:first-child) {
+    margin-top: 15px;
+}
+
+.manager-info:not(:first-child) {
+    margin-top: 15px;
+}
+
+.brand-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 25px;
+    border-color: transparent;
+    color: #ffffff;
+    font-size: 22px;
+}
+
+.product-img {
+    height: auto;
+    width: 100%;
+    display: block;
+}
+
+.hidden {
+    display: none;
+}

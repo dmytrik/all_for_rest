@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+  <section class="section">
+    <div class="wrapper">
+      <ul class="product-list" data-url="{% url "product:json-sets" %}"></ul>
+      <button class="load hidden">Load More</button>
+    </div>
+    <script src="{% static "js/product-list.js" %}"></script>
+  </section>
+{% endblock %}

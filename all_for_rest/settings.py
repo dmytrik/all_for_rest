@@ -40,10 +40,12 @@ INSTALLED_APPS = [
     'django_dropbox_storage',
     'product',
     'accounts',
+    "debug_toolbar"
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -75,10 +77,10 @@ STORAGES = {
     "default": {
         "BACKEND": "storages.backends.dropbox.DropboxStorage",
         "OPTIONS": {
-            'oauth2_refresh_token': "LLQKRJQEcbMAAAAAAAAAAWp1XhrBzkHIAN_K3OHtVjJ6bpodfUUr7RmYm8jzw9pR",
+            'oauth2_access_token': "sl.CBa79Nw94ypQUb-Yd8X69lsXlsNWj1kUoqSDxC7sN3dqmjpE5BtnaOTMucYb_uXE4PFLyc5gqBfptOEbusOFMDKHHZhTCEQebcquSpQ_fzitmGmH_4M528XZxaaHr_5I9ZduhUlmJoXRfEtkC0MT0qs",
+            'oauth2_refresh_token': "QMeKqDCqBHUAAAAAAAAAAZRlrJ6sDaMeGMy41fO9W70t_hU41GydUlXtG4gPuw_f",
             'app_secret': "84h180i1qby8ccn",
             'app_key': "z59xzchyohlzt1p",
-            'root_path': '/photos/'
         },
     },
     "staticfiles": {
@@ -86,10 +88,6 @@ STORAGES = {
     },
 }
 
-DROPBOX_ACCESS_TOKEN = "sl.CBQCtP3tMBtZz_pLdgT48475k-RpU9AGHNgIFY1TRrtlE2E27G9PU26EyOUoGhEXhYTKhzRV5VSZpMLTMHc_K1pahWeCJUstsEMueZmW4wNCDwXHXwIOB8p1eJCDsm4TZEq6_2rxIKrxPt76jBTmMvk"
-DROPBOX_REFRESH_TOKEN = "LLQKRJQEcbMAAAAAAAAAAWp1XhrBzkHIAN_K3OHtVjJ6bpodfUUr7RmYm8jzw9pR"
-DROPBOX_APP_SECRET = "84h180i1qby8ccn"
-DROPBOX_APP_KEY = "z59xzchyohlzt1p"
 
 WSGI_APPLICATION = 'all_for_rest.wsgi.application'
 
@@ -140,12 +138,17 @@ AUTH_USER_MODEL = "accounts.Manager"
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = "static/"
+
+STATICFILES_DIRS = (BASE_DIR / "static",)
+
+STATIC_ROOT = BASE_DIR / "staticfiles"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
-# curl -u z59xzchyohlzt1p:84h180i1qby8ccn -d "code=FM6MTmfSYLsAAAAAAAAALnJrPFmR_UU4HjqUszFXwCk&grant_type=authorization_code" -H "Content-Type: application/x-www-form-urlencoded"  -X POST "https://api.dropboxapi.com/oauth2/token"
+INTERNAL_IPS = [
+    "127.0.0.1",
+]

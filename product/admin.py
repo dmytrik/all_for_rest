@@ -2,6 +2,20 @@ from django.contrib import admin
 
 from product.models import Product, ProductType, Brand
 
-admin.site.register(Product)
-admin.site.register(ProductType)
-admin.site.register(Brand)
+
+@admin.register(Product)
+class ProductAdmin(admin.ModelAdmin):
+    search_fields = ("name",)
+    list_filter = ("type",)
+
+
+@admin.register(Brand)
+class BrandAdmin(admin.ModelAdmin):
+    search_fields = ("name",)
+    list_filter = ("country",)
+
+
+@admin.register(ProductType)
+class ProductTypeAdmin(admin.ModelAdmin):
+    search_fields = ("name",)
+    list_filter = ("managers",)

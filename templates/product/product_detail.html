@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="section">
+    <div class="wrapper">
+      <div class="detail-image-container">
+        <img src="{{ product.photo.url }}" alt="picture" class="product-img">
+      </div>
+      <div class="product-about">
+        <p class="product-info">{{ product.name }}</p>
+        <p class="product-info">{{ product.price }}</p>
+        <p class="product-info">{{ product.description }}</p>
+      </div>
+    </div>
+  </div>
+{% endblock %}

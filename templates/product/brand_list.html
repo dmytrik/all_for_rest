@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="section">
+    <div class="wrapper">
+      <ul class="brand-list">
+        {% for brand in brand_list %}
+          <li class="brand-item">
+            <p class="brand-info">{{ brand.name }}</p>
+            <p class="brand-info">{{ brand.country }}</p>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+  <script>
+  const brands = document.querySelectorAll(".brand-item")
+  brands.forEach(el => {
+      el.style.backgroundColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+  })
+  </script>
+{% endblock %}

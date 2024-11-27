@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <section>
+    <div class="wrapper">
+      <h2 class="section-title">Common Info: </h2>
+      <ul class="info-list">
+        <li class="info-item">
+          <h3>Count of products</h3>
+          <span>{{ count_of_products }}</span>
+        </li>
+        <li class="info-item">
+          <h3>Count of brands</h3>
+          <span>{{ count_of_brands }}</span>
+        </li>
+        <li class="info-item">
+          <h3>Count of managers</h3>
+          <span>{{ count_of_managers }}</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+{% endblock %}
