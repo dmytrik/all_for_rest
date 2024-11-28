@@ -1,6 +1,9 @@
 from django.http import HttpRequest, HttpResponse, JsonResponse
 from django.shortcuts import render
+from django.urls import reverse_lazy
 from django.views import View, generic
+from django.views.decorators.http import condition
+from urllib3 import request
 
 from accounts.models import Manager
 from product.models import Product, Brand
@@ -116,6 +119,26 @@ class JsonCampingProductsResponse(View):
 
 class ProductDetailView(generic.DetailView):
     model = Product
+
+    def get_context_data(self, **kwargs):
+        context = super(ProductDetailView, self).get_context_data(**kwargs)
+        condition = ((self.request.user.position == "furniture_seller" and self.object.type.name == "garden_furniture")
+                     or (self.request.user.position == "grill_seller" and self.object.type.name == "grill_products")
+                     or (self.request.user.position == "camping_seller" and self.object.type.name == "camping_products"))
+        context["condition"] = condition
+        return context
+
+
+class ProductCreateView(generic.CreateView):
+    model = Product
+    fields = "__all__"
+    success_url = reverse_lazy("product:index")
+
+
+class ProductUpdateView(generic.UpdateView):
+    model = Product
+    fields = ("name", "price", "brand", "description", "photo")
+    success_url = reverse_lazy("product:index")
 
 
 class BrandListView(generic.ListView):

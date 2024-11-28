@@ -12,6 +12,14 @@
         <p class="product-info">{{ product.price }}</p>
         <p class="product-info">{{ product.description }}</p>
       </div>
+      <div class="options-container">
+        {% if condition %}
+          <a href="{% url "product:product-update" product.id %}" class="update-btn nav-btn">Update</a>
+          {% if user.is_staff %}
+          <a href="" class="delete-btn nav-btn">Delete</a>
+          {% endif %}
+        {% endif %}
+      </div>
       <h1 class="product-title">Managers</h1>
       <ul class="manager-list manager-info-in-product-detail">
       {% for manager in product.type.managers.all %}

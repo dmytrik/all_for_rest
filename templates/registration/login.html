@@ -1,9 +1,22 @@
 {% extends "base.html" %}
+{% load widget_tweaks %}
+
 
 {% block content %}
-  <form action="{% url "login" %}" method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Submit">
-  </form>
+  <section class="section">
+    <div class="wrapper">
+      <form action="{% url "login" %}" method="post" class="form">
+        {% csrf_token %}
+        <label class="form-label">
+          <p class="form-p">Username</p>
+          {% render_field form.username placeholder="Username" class+="form-input" %}
+        </label>
+        <label class="form-label">
+          <p class="form-p">Password</p>
+          {% render_field form.password placeholder="Password" class+="form-input" %}
+        </label>
+        <input type="submit" value="Submit" class="submit">
+      </form>
+    </div>
+  </section>
 {% endblock %}

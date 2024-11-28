@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django_dropbox_storage',
     'product',
     'accounts',
-    "debug_toolbar"
+    "debug_toolbar",
+    "widget_tweaks"
 ]
 
 MIDDLEWARE = [

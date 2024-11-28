@@ -12,4 +12,4 @@ class ManagerListView(generic.ListView):
 class ManagerCreateView(generic.CreateView):
     model = Manager
     form_class = ManagerCreationForm
-    success_url = reverse_lazy("product:index")
+    success_url = reverse_lazy("login")

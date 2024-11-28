@@ -12,11 +12,11 @@
     <li class="nav-item">
       <form action="{% url "logout" %}" method="post">
         {% csrf_token %}
-        <input type="submit" value="Logout">
+        <input type="submit" value="Logout" class="nav-btn logout">
       </form>
     </li>
   {% else %}
-    <li class="nav-item"><a href="{% url "login" %}">Login</a></li>
-    <li class="nav-item"><a href="{% url "accounts:manager-create" %}">Regisrtation</a></li>
+    <li class="nav-item log"><a href="{% url "login" %}" class="nav-btn login">Login</a></li>
+    <li class="nav-item"><a href="{% url "accounts:manager-create" %}" class="nav-btn registration">Regisrtation</a></li>
   {% endif %}
 </ul>

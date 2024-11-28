@@ -1,5 +1,3 @@
-from http.client import responses
-
 from django.urls import path
 from product.views import (
     Index,
@@ -10,7 +8,9 @@ from product.views import (
     JsonFurnitureResponse,
     JsonCampingProductsResponse,
     JsonGrillProductsResponse,
-    ProductDetailView
+    ProductDetailView,
+    ProductUpdateView,
+    ProductCreateView
 )
 
 urlpatterns = [
@@ -21,6 +21,12 @@ urlpatterns = [
     path("furniture_sets/<int:pk>/", ProductDetailView.as_view(), name="product-detail"),
     path("grill_products/<int:pk>/", ProductDetailView.as_view(), name="product-detail"),
     path("camping_products/<int:pk>/", ProductDetailView.as_view(), name="product-detail"),
+    path("furniture_sets/<int:pk>/update/", ProductUpdateView.as_view(), name="product-update"),
+    path("grill_products/<int:pk>/update/", ProductUpdateView.as_view(), name="product-update"),
+    path("camping_products/<int:pk>/update/", ProductUpdateView.as_view(), name="product-update"),
+    path("furniture_sets/create/", ProductCreateView.as_view(), name="product-create"),
+    path("grill_products/create/", ProductCreateView.as_view(), name="product-create"),
+    path("camping_products/create/", ProductCreateView.as_view(), name="product-create"),
     path("brands/", BrandListView.as_view(), name="brand-list"),
     path("json-sets/", JsonFurnitureResponse.as_view(), name="json-sets"),
     path("json-camping-products/", JsonCampingProductsResponse.as_view(), name="json-camping-products"),
