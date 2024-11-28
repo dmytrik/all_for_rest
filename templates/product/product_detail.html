@@ -1,16 +1,32 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
   <div class="section">
     <div class="wrapper">
       <div class="detail-image-container">
-        <img src="{{ product.photo.url }}" alt="picture" class="product-img">
+        <img src="{{ product.photo.url }}" alt="picture" class="product-img-detail">
       </div>
       <div class="product-about">
         <p class="product-info">{{ product.name }}</p>
         <p class="product-info">{{ product.price }}</p>
         <p class="product-info">{{ product.description }}</p>
       </div>
+      <h1 class="product-title">Managers</h1>
+      <ul class="manager-list manager-info-in-product-detail">
+      {% for manager in product.type.managers.all %}
+      <li class="manager-item">
+        <div class="img-container">
+          <img src="{% static "img/manager.webp" %}" alt="photo" class = "product-img">
+        </div>
+        <div class="info-container">
+          <p class="manager-info">{{ manager.username }}</p>
+          <p class="manager-info">{{ manager.position }}</p>
+          <a href="" class="manager-info" style="color: darkolivegreen">More info...</a>
+        </div>
+      </li>
+      {% endfor %}
+      </ul>
     </div>
   </div>
 {% endblock %}

@@ -37,7 +37,6 @@ li {
 img {
     max-width: 100%;
     display: block;
-    max-height: 300px;
 }
 
 .wrapper {
@@ -166,9 +165,22 @@ header .wrapper {
 }
 
 .product-img {
+    max-height: 300px;
+}
+
+.product-img-detail {
     height: auto;
     width: 100%;
     display: block;
+}
+
+.product-title {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.manager-info-in-product-detail {
+    margin-top: 20px;
 }
 
 .hidden {
