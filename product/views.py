@@ -143,3 +143,14 @@ class ProductUpdateView(generic.UpdateView):
 
 class BrandListView(generic.ListView):
     model = Brand
+
+
+class BrandDetailView(generic.DetailView):
+    model = Brand
+
+
+class BrandCreateView(generic.CreateView):
+    model = Brand
+    fields = ("name",)
+    success_url = reverse_lazy("product:brand-list")
+

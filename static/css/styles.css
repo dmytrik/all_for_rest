@@ -57,6 +57,10 @@ header .wrapper {
     color: darkgoldenrod;
 }
 
+.section-title {
+    color: darkgoldenrod;
+}
+
 .nav-list {
     display: flex;
 }
@@ -120,10 +124,29 @@ header .wrapper {
 }
 
 .info-list{
-    display: flex;
-    justify-content: space-around;
-    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 20px;
+    row-gap: 15px;
     text-align: center;
+    margin-top: 20px;
+}
+
+.info-item {
+    padding: 20px;
+    border: 2px solid darkgoldenrod;
+}
+
+.info-item.add {
+    border-color: transparent;
+    padding: 0;
+    background-image: linear-gradient(to right, darkgoldenrod, darkkhaki);
+    border-radius: 10px;
+    color: #ffffff;
+}
+
+.info-item.add a {
+    padding: 20px;
 }
 
 .product-list,
@@ -192,7 +215,7 @@ header .wrapper {
 }
 
 .product-img-detail {
-    height: auto;
+    max-height: 500px;
     width: 100%;
     display: block;
 }
@@ -220,6 +243,17 @@ header .wrapper {
 
 .manager-info-in-product-detail {
     margin-top: 20px;
+}
+
+.brand-title-box {
+    display: flex;
+    justify-content: space-around;
+}
+
+.brand-options-box {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
 }
 
 .form {
@@ -278,6 +312,12 @@ header .wrapper {
     border-radius: 10px;
     border-color: transparent;
     cursor: pointer;
+}
+
+.brand-p {
+    color:darkgoldenrod;
+    font-size: 22px;
+    margin-top: 20px;
 }
 
 .hidden {

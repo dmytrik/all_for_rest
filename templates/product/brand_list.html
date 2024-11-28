@@ -6,8 +6,10 @@
       <ul class="brand-list">
         {% for brand in brand_list %}
           <li class="brand-item">
-            <p class="brand-info">{{ brand.name }}</p>
-            <p class="brand-info">{{ brand.country }}</p>
+            <a href="{% url "product:brand-detail" brand.id %}">
+              <p class="brand-info">{{ brand.name }}</p>
+              <p class="brand-info">{{ brand.country }}</p>
+            </a>
           </li>
         {% endfor %}
       </ul>
