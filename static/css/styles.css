@@ -17,6 +17,7 @@ p {
 
 body {
     color: #212121;
+    background-image: linear-gradient(to right, #D9AFD9, #97D9E1);
 }
 
 a {
@@ -178,6 +179,13 @@ header .wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.manager-img-detail {
+    display: block;
+    margin: 0 auto;
+    width: 450px;
+    height: 500px;
 }
 
 .info-container {

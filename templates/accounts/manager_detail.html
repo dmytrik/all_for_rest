@@ -1,21 +1,20 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
   <section class="section">
     <div class="wrapper">
-      <div class="brand-title-box">
-        <h1 class="section-title">Brand {{ brand.name }}</h1>
-        {% if user.is_staff %}
-          <div class="brand-options-box">
-            <a href="{% url "product:brand-update" brand.id %}" class="update-btn nav-btn">Update</a>
-            <a href="{% url "product:brand-delete" brand.id %}" class="delete-btn nav-btn">Delete</a>
-          </div>
-        {% endif %}
+      <div class="manager-image-container">
+        <img src="{% static "img/manager.webp" %}" alt="picture" class="manager-img-detail">
       </div>
-      {% if brand.products %}
-        <p class="brand-p">Products of this brand:</p>
-        <ul class="product-list">
-          {% for product in brand.products.all %}
+      <div class="manager-about">
+        <p class="manager-info">{{ manager.username }}</p>
+        <p class="manager-info">{{ manager.position }}</p>
+      </div>
+      {% if products %}
+        <h1 class="section-title" style="margin-top: 15px">Products the manager sells</h1>
+        <ul class="product-list" style="margin-top: 15px">
+          {% for product in products %}
             <li class="product-item">
               <div class="img-container">
                 <img src="{{ product.photo.url }}" alt="photo" class="product-img">
@@ -23,7 +22,7 @@
               <div class="info-container">
                 <p class="product-info" style="color: darkorange">{{ product.name }}</p>
                 <p class="product-info">{{ product.price }} грн</p>
-                <p class="product-info">{{ product.type.name }}</p>
+                <p class="product-info">{{ product.type }}</p>
                 <a href="{% url "product:product-detail" product.id %}" class="product-info product-link-info" style="color: darkolivegreen">More
                   info...</a>
               </div>

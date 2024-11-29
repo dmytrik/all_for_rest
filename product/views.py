@@ -1,3 +1,4 @@
+from django.core.paginator import Paginator
 from django.http import HttpRequest, HttpResponse, JsonResponse
 from django.shortcuts import render
 from django.urls import reverse_lazy
@@ -34,57 +35,11 @@ class FurnitureSetsView(View):
         return render(request, "product/furniture_sets.html")
 
 
-class JsonFurnitureResponse(View):
-    @staticmethod
-    def get(request):
-        page = request.GET.get("page")
-        if not page:
-            page = 1
-        to_ = int(page) * 9
-        from_ = to_ - 9
-        sets = Product.objects.select_related("brand").filter(type__name="garden_furniture")[from_:to_]
-        res = []
-        for set in sets:
-            res.append({
-                "name": set.name,
-                "price": set.price,
-                "description": set.description,
-                "id": set.id,
-                "brand": set.brand.name,
-                "type": "садові меблі",
-                "photo": set.photo.url
-            })
-        return JsonResponse(res, safe=False)
-
-
 class GrillProductsView(View):
 
     @staticmethod
     def get(request: HttpRequest) -> HttpResponse:
         return render(request, "product/grill_products.html")
-
-
-class JsonGrillProductsResponse(View):
-    @staticmethod
-    def get(request):
-        page = request.GET.get("page")
-        if not page:
-            page = 1
-        to_ = int(page) * 9
-        from_ = to_ - 9
-        sets = Product.objects.select_related("brand").filter(type__name="grill_products")[from_:to_]
-        res = []
-        for set in sets:
-            res.append({
-                "name": set.name,
-                "price": set.price,
-                "description": set.description,
-                "id": set.id,
-                "brand": set.brand.name,
-                "type": "товари для барбекю",
-                "photo": set.photo.url
-            })
-        return JsonResponse(res, safe=False)
 
 
 class CampingProductsView(View):
@@ -93,28 +48,6 @@ class CampingProductsView(View):
     def get(request: HttpRequest) -> HttpResponse:
         return render(request, "product/camping_products.html")
 
-
-class JsonCampingProductsResponse(View):
-    @staticmethod
-    def get(request):
-        page = request.GET.get("page")
-        if not page:
-            page = 1
-        to_ = int(page) * 9
-        from_ = to_ - 9
-        sets = Product.objects.select_related("brand").filter(type__name="camping_products")[from_:to_]
-        res = []
-        for set in sets:
-            res.append({
-                "name": set.name,
-                "price": set.price,
-                "description": set.description,
-                "id": set.id,
-                "brand": set.brand.name,
-                "type": "товари для відпочинку",
-                "photo": set.photo.url
-            })
-        return JsonResponse(res, safe=False)
 
 
 class ProductDetailView(generic.DetailView):
@@ -147,6 +80,17 @@ class BrandListView(generic.ListView):
 
 class BrandDetailView(generic.DetailView):
     model = Brand
+
+
+class BrandUpdateView(generic.UpdateView):
+    model = Brand
+    fields = ("name",)
+    success_url = reverse_lazy("product:brand-list")
+
+
+class BrandDeleteView(generic.DeleteView):
+    model = Brand
+    success_url = reverse_lazy("product:brand-list")
 
 
 class BrandCreateView(generic.CreateView):

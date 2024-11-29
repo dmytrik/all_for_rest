@@ -30,7 +30,7 @@
         <div class="info-container">
           <p class="manager-info">{{ manager.username }}</p>
           <p class="manager-info">{{ manager.position }}</p>
-          <a href="" class="manager-info" style="color: darkolivegreen">More info...</a>
+          <a href="{% url "accounts:manager-detail" manager.id %}" class="manager-info" style="color: darkolivegreen">More info...</a>
         </div>
       </li>
       {% endfor %}

@@ -7,13 +7,18 @@ from product.views import (
     BrandListView,
     BrandDetailView,
     BrandCreateView,
-    JsonFurnitureResponse,
-    JsonCampingProductsResponse,
-    JsonGrillProductsResponse,
+    BrandUpdateView,
+    BrandDeleteView,
     ProductDetailView,
     ProductUpdateView,
     ProductCreateView
 )
+from product.views_json_response import (
+    JsonFurnitureResponse,
+    JsonGrillProductsResponse,
+    JsonCampingProductsResponse
+)
+
 
 urlpatterns = [
     path("", Index.as_view(), name="index"),
@@ -31,11 +36,17 @@ urlpatterns = [
     path("grill_products/create/", ProductCreateView.as_view(), name="product-create"),
     path("camping_products/create/", ProductCreateView.as_view(), name="product-create"),
     path("brands/", BrandListView.as_view(), name="brand-list"),
-    path("brands/<int:pk>", BrandDetailView.as_view(), name="brand-detail"),
+    path("brands/<int:pk>/", BrandDetailView.as_view(), name="brand-detail"),
+    path("brands/<int:pk>/update", BrandUpdateView.as_view(), name="brand-update"),
+    path("brands/<int:pk>/delete", BrandDeleteView.as_view(), name="brand-delete"),
     path("brands/create", BrandCreateView.as_view(), name="brand-create"),
+]
+
+urlpatterns.extend([
     path("json-sets/", JsonFurnitureResponse.as_view(), name="json-sets"),
     path("json-camping-products/", JsonCampingProductsResponse.as_view(), name="json-camping-products"),
-    path("json-grill-products/", JsonGrillProductsResponse.as_view(), name="json-grill-products"),
-]
+    path("json-grill-products/", JsonGrillProductsResponse.as_view(), name="json-grill-products")
+    ]
+)
 
 app_name = "product"
