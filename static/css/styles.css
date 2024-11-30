@@ -17,7 +17,6 @@ p {
 
 body {
     color: #212121;
-    background-image: linear-gradient(to right, #D9AFD9, #97D9E1);
 }
 
 a {
@@ -45,6 +44,10 @@ img {
     padding-left: 20px;
     padding-right: 20px;
     margin: 0 auto;
+}
+
+main .wrapper {
+    background-color: #ffffff;
 }
 
 header .wrapper {
@@ -150,6 +153,36 @@ header .wrapper {
     padding: 20px;
 }
 
+.product-search-form {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.search-btn {
+    background-image: linear-gradient(to right, chocolate, darkgoldenrod);
+    color: #ffffff;
+    padding: 5px;
+    border-radius: 10px;
+    border-color: transparent;
+    cursor: pointer;
+}
+
+.search-input {
+    width: 400px;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.search-input:hover,
+.search-input:focus {
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 .2rem rgba(0, 123, 255, .25);
+}
+
 .product-list,
 .brand-list,
 .manager-list{
@@ -157,6 +190,7 @@ header .wrapper {
     grid-template-columns: repeat(3, 1fr);
     column-gap: 20px;
     row-gap: 15px;
+    margin-top: 50px;
 }
 
 .load {
@@ -233,6 +267,10 @@ header .wrapper {
     margin-top: 20px;
 }
 
+.product-about {
+    padding: 20px;
+}
+
 .options-container {
     display: flex;
     justify-content: center;
@@ -262,6 +300,14 @@ header .wrapper {
     display: flex;
     gap: 20px;
     justify-content: center;
+}
+
+.registr-in-login {
+    margin-bottom: 10px;
+    padding: 3px;
+    border-radius: 5px;
+    color: #ffffff;
+    background-color:cornflowerblue;
 }
 
 .form {

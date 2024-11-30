@@ -1,16 +1,15 @@
-from django.core.paginator import Paginator
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpRequest, HttpResponse, JsonResponse
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views import View, generic
-from django.views.decorators.http import condition
-from urllib3 import request
 
 from accounts.models import Manager
 from product.models import Product, Brand
+from product.forms import ProductSearchForm
 
 
-class Index(View):
+class Index(LoginRequiredMixin, View):
 
     @staticmethod
     def get(request: HttpRequest) -> HttpResponse:
@@ -28,29 +27,38 @@ class Index(View):
         return render(request, "product/index.html", context=context)
 
 
-class FurnitureSetsView(View):
+class FurnitureSetsView(LoginRequiredMixin, View):
 
     @staticmethod
     def get(request: HttpRequest) -> HttpResponse:
-        return render(request, "product/furniture_sets.html")
+        context = {
+            "form": ProductSearchForm()
+        }
+        return render(request, "product/furniture_sets.html", context)
 
 
-class GrillProductsView(View):
-
-    @staticmethod
-    def get(request: HttpRequest) -> HttpResponse:
-        return render(request, "product/grill_products.html")
-
-
-class CampingProductsView(View):
+class GrillProductsView(LoginRequiredMixin, View):
 
     @staticmethod
     def get(request: HttpRequest) -> HttpResponse:
-        return render(request, "product/camping_products.html")
+        context = {
+            "form": ProductSearchForm()
+        }
+        return render(request, "product/grill_products.html", context)
+
+
+class CampingProductsView(LoginRequiredMixin, View):
+
+    @staticmethod
+    def get(request: HttpRequest) -> HttpResponse:
+        context = {
+            "form": ProductSearchForm()
+        }
+        return render(request, "product/camping_products.html", context)
 
 
 
-class ProductDetailView(generic.DetailView):
+class ProductDetailView(LoginRequiredMixin, generic.DetailView):
     model = Product
 
     def get_context_data(self, **kwargs):
@@ -62,38 +70,38 @@ class ProductDetailView(generic.DetailView):
         return context
 
 
-class ProductCreateView(generic.CreateView):
+class ProductCreateView(LoginRequiredMixin, generic.CreateView):
     model = Product
     fields = "__all__"
     success_url = reverse_lazy("product:index")
 
 
-class ProductUpdateView(generic.UpdateView):
+class ProductUpdateView(LoginRequiredMixin, generic.UpdateView):
     model = Product
     fields = ("name", "price", "brand", "description", "photo")
     success_url = reverse_lazy("product:index")
 
 
-class BrandListView(generic.ListView):
+class BrandListView(LoginRequiredMixin, generic.ListView):
     model = Brand
 
 
-class BrandDetailView(generic.DetailView):
+class BrandDetailView(LoginRequiredMixin, generic.DetailView):
     model = Brand
 
 
-class BrandUpdateView(generic.UpdateView):
+class BrandUpdateView(LoginRequiredMixin, generic.UpdateView):
     model = Brand
     fields = ("name",)
     success_url = reverse_lazy("product:brand-list")
 
 
-class BrandDeleteView(generic.DeleteView):
+class BrandDeleteView(LoginRequiredMixin, generic.DeleteView):
     model = Brand
     success_url = reverse_lazy("product:brand-list")
 
 
-class BrandCreateView(generic.CreateView):
+class BrandCreateView(LoginRequiredMixin, generic.CreateView):
     model = Brand
     fields = ("name",)
     success_url = reverse_lazy("product:brand-list")

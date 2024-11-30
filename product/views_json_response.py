@@ -4,13 +4,18 @@ from django.views import View
 
 from product.models import Product
 
+COUNT_OF_PRODUCTS = 9
+
 
 class JsonFurnitureResponse(View):
     @staticmethod
     def get(request):
         page = request.GET.get("page")
+        name = request.GET.get("name")
         queryset = Product.objects.select_related("brand").filter(type__name="garden_furniture")
-        paginator = Paginator(queryset, 9)
+        if name:
+            queryset = queryset.filter(name__icontains=name)
+        paginator = Paginator(queryset, COUNT_OF_PRODUCTS)
         page_object = paginator.get_page(page)
 
         res = [
@@ -33,8 +38,11 @@ class JsonGrillProductsResponse(View):
     @staticmethod
     def get(request):
         page = request.GET.get("page")
+        name = request.GET.get("name")
         queryset = Product.objects.select_related("brand").filter(type__name="grill_products")
-        paginator = Paginator(queryset, 9)
+        if name:
+            queryset = queryset.filter(name__icontains=name)
+        paginator = Paginator(queryset, COUNT_OF_PRODUCTS)
         page_object = paginator.get_page(page)
 
         res = [
@@ -57,8 +65,11 @@ class JsonCampingProductsResponse(View):
     @staticmethod
     def get(request):
         page = request.GET.get("page")
+        name = request.GET.get("name")
         queryset = Product.objects.select_related("brand").filter(type__name="camping_products")
-        paginator = Paginator(queryset, 9)
+        if name:
+            queryset = queryset.filter(name__icontains=name)
+        paginator = Paginator(queryset, COUNT_OF_PRODUCTS)
         page_object = paginator.get_page(page)
 
         res = [

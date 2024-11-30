@@ -1,3 +1,4 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from django.views import generic
 
@@ -5,11 +6,11 @@ from accounts.models import Manager
 from accounts.forms import ManagerCreationForm
 
 
-class ManagerListView(generic.ListView):
+class ManagerListView(LoginRequiredMixin, generic.ListView):
     model = Manager
 
 
-class ManagerDetailView(generic.DetailView):
+class ManagerDetailView(LoginRequiredMixin, generic.DetailView):
     model = Manager
     success_url = reverse_lazy("accounts:manager-list")
 
