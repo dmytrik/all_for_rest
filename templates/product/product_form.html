@@ -11,6 +11,8 @@
         <h1 class="form-title">{{ object|yesno:"Update,Create" }} product</h1>
         <form action="" method="post" novalidate class="form" style="width: 600px">
           {% csrf_token %}
+          {{ form.non_field_errors }}
+          {{ form.errors }}
           <label for="">
             <p class="form-p">Name</p>
             {% render_field form.name class+="form-input" %}

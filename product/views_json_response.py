@@ -26,7 +26,7 @@ class JsonFurnitureResponse(View):
                 "id": product.id,
                 "brand": product.brand.name,
                 "type": "садові меблі",
-                "photo": product.photo.url
+                "photo": product.photo.url if product.photo else ""
             }
             for product in page_object
         ]
@@ -53,7 +53,7 @@ class JsonGrillProductsResponse(View):
                 "id": product.id,
                 "brand": product.brand.name,
                 "type": "товари для барбекю",
-                "photo": product.photo.url
+                "photo": product.photo.url if product.photo else ""
             }
             for product in page_object
         ]
@@ -80,7 +80,7 @@ class JsonCampingProductsResponse(View):
                 "id": product.id,
                 "brand": product.brand.name,
                 "type": "товари для відпочинку",
-                "photo": product.photo.url
+                "photo": product.photo.url if product.photo else ""
             }
             for product in page_object
         ]

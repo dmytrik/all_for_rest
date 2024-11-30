@@ -92,7 +92,7 @@ class BrandDetailView(LoginRequiredMixin, generic.DetailView):
 
 class BrandUpdateView(LoginRequiredMixin, generic.UpdateView):
     model = Brand
-    fields = ("name",)
+    fields = ("name", "country")
     success_url = reverse_lazy("product:brand-list")
 
 
@@ -103,6 +103,6 @@ class BrandDeleteView(LoginRequiredMixin, generic.DeleteView):
 
 class BrandCreateView(LoginRequiredMixin, generic.CreateView):
     model = Brand
-    fields = ("name",)
+    fields = ("name", "country")
     success_url = reverse_lazy("product:brand-list")
 

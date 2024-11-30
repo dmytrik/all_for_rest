@@ -15,6 +15,14 @@
           {% render_field form.username placeholder="username" class+="form-input" %}
         </label>
         <label class="form-label">
+          <p class="form-p">First name</p>
+          {% render_field form.first_name placeholder="first name" class+="form-input" %}
+        </label>
+        <label class="form-label">
+          <p class="form-p">Last name</p>
+          {% render_field form.last_name placeholder="last_name" class+="form-input" %}
+        </label>
+        <label class="form-label">
           <p class="form-p">Password</p>
           {% render_field form.password1 placeholder="password" class+="form-input" %}
         </label>

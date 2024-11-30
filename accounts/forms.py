@@ -13,4 +13,8 @@ class ManagerCreationForm(UserCreationForm):
 
     class Meta(UserCreationForm.Meta):
         model = Manager
-        fields = UserCreationForm.Meta.fields + ("position",)
+        fields = UserCreationForm.Meta.fields + (
+            "position",
+            "first_name",
+            "last_name"
+        )

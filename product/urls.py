@@ -29,12 +29,8 @@ urlpatterns = [
     path("grill_products/<int:pk>/", ProductDetailView.as_view(), name="product-detail"),
     path("camping_products/<int:pk>/", ProductDetailView.as_view(), name="product-detail"),
     path("products/<int:pk>/", ProductDetailView.as_view(), name="product-detail"),
-    path("furniture_sets/<int:pk>/update/", ProductUpdateView.as_view(), name="product-update"),
-    path("grill_products/<int:pk>/update/", ProductUpdateView.as_view(), name="product-update"),
-    path("camping_products/<int:pk>/update/", ProductUpdateView.as_view(), name="product-update"),
-    path("furniture_sets/create/", ProductCreateView.as_view(), name="product-create"),
-    path("grill_products/create/", ProductCreateView.as_view(), name="product-create"),
-    path("camping_products/create/", ProductCreateView.as_view(), name="product-create"),
+    path("products/<int:pk>/update/", ProductUpdateView.as_view(), name="product-update"),
+    path("products/create/", ProductCreateView.as_view(), name="product-create"),
     path("brands/", BrandListView.as_view(), name="brand-list"),
     path("brands/<int:pk>/", BrandDetailView.as_view(), name="brand-detail"),
     path("brands/<int:pk>/update", BrandUpdateView.as_view(), name="brand-update"),
@@ -46,7 +42,6 @@ urlpatterns.extend([
     path("json-sets/", JsonFurnitureResponse.as_view(), name="json-sets"),
     path("json-camping-products/", JsonCampingProductsResponse.as_view(), name="json-camping-products"),
     path("json-grill-products/", JsonGrillProductsResponse.as_view(), name="json-grill-products")
-    ]
-)
+])
 
 app_name = "product"
