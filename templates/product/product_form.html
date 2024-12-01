@@ -9,7 +9,7 @@
   <section class="section">
     <div class="wrapper">
         <h1 class="form-title">{{ object|yesno:"Update,Create" }} product</h1>
-        <form action="" method="post" novalidate class="form" style="width: 600px">
+        <form action="" method="post" novalidate class="form product-form">
           {% csrf_token %}
           {{ form.non_field_errors }}
           {{ form.errors }}
@@ -33,7 +33,7 @@
           {% endif %}
           <label for="">
             <p class="form-p">Description</p>
-            {% render_field form.description rows="10" cols="50" class+="form-area" %}
+            {% render_field form.description class+="form-area" %}
           </label>
           <label for="">
             <p class="form-p">Photo</p>

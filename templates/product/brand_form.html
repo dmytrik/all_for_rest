@@ -9,7 +9,7 @@
   <section class="section">
     <div class="wrapper">
         <h1 class="form-title">{{ object|yesno:"Update,Create" }} brand</h1>
-        <form action="" method="post" novalidate class="form" style="width: 600px">
+        <form action="" method="post" novalidate class="form product-form">
           {% csrf_token %}
           <label for="">
             <p class="form-p">Name</p>

@@ -16,16 +16,25 @@ function search_product(e) {
     current_page = 1
     search_value = e.target.name.value
     get_products(e.target.name.value)
+    form.reset()
 }
 
 function get_products(name = "") {
-    fetch(`${url}?page=${current_page}&name=${name}`).then(res => res.json()).then(make_markup);
+    fetch(`${url}?page=${current_page}&name=${name}`).then(res => res.json()).then(make_markup).catch(
+        err => {
+            console.clear()
+        }
+    );
 }
 
 function make_markup(products) {
     console.log(products)
     if (products.length < COUNT_OF_PRODUCTS) {
         load.classList.add("hidden")
+    }
+    if (products.length === 0) {
+        container.innerHTML = `<h1 class="section-title" style="text-align: center">Oops nothing found(</h1>`
+        return
     }
 
     const products_markup = products.map(el =>

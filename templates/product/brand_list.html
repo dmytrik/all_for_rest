@@ -10,7 +10,7 @@
       <ul class="brand-list">
         {% for brand in brand_list %}
           <li class="brand-item">
-            <a href="{% url "product:brand-detail" brand.id %}">
+            <a href="{% url "product:brand-detail" brand.id %}" class="brand-link">
               <p class="brand-info">{{ brand.name }}</p>
               <p class="brand-info">{{ brand.country }}</p>
             </a>
@@ -19,10 +19,4 @@
       </ul>
     </div>
   </div>
-  <script>
-  const brands = document.querySelectorAll(".brand-item")
-  brands.forEach(el => {
-      el.style.backgroundColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
-  })
-  </script>
 {% endblock %}
