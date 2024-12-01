@@ -55,9 +55,18 @@ class PrivateProductTest(TestCase):
         self.assertEqual(res_camping_products.status_code, 200)
         self.assertEqual(res_grill_products.status_code, 200)
 
-        self.assertTemplateUsed(res_furniture_sets, "product/furniture_sets.html")
-        self.assertTemplateUsed(res_grill_products, "product/grill_products.html")
-        self.assertTemplateUsed(res_camping_products, "product/camping_products.html")
+        self.assertTemplateUsed(
+            res_furniture_sets,
+            "product/furniture_sets.html"
+        )
+        self.assertTemplateUsed(
+            res_grill_products,
+            "product/grill_products.html"
+        )
+        self.assertTemplateUsed(
+            res_camping_products,
+            "product/camping_products.html"
+        )
 
     def test_retrieve_furniture_sets(self):
         brand = Brand.objects.create(
@@ -113,7 +122,10 @@ class PrivateProductTest(TestCase):
             type=self.product_type,
         )
 
-        response = self.client.get(f"{JSON_RESPONSE_FURNITURE_SETS_URL}?page=1&name={FURNITURE_SETS_SEARCH_WORD}")
+        response = self.client.get(
+            f"{JSON_RESPONSE_FURNITURE_SETS_URL}?"
+            f"page=1&name={FURNITURE_SETS_SEARCH_WORD}"
+        )
 
         products = [
             {
@@ -125,11 +137,12 @@ class PrivateProductTest(TestCase):
                 "type": "садові меблі",
                 "photo": product.photo.url if product.photo else ""
             }
-            for product in Product.objects.filter(name__icontains=FURNITURE_SETS_SEARCH_WORD)
+            for product in Product.objects.filter(
+                name__icontains=FURNITURE_SETS_SEARCH_WORD
+            )
         ]
 
         self.assertEqual(json.loads(response.content), products)
-
 
     def test_retrieve_grill_products(self):
         brand = Brand.objects.create(
@@ -198,9 +211,14 @@ class PrivateProductTest(TestCase):
                 "type": "товари для барбекю",
                 "photo": product.photo.url if product.photo else ""
             }
-            for product in Product.objects.filter(name__icontains=CAMPING_PRODUCTS_SEARCH_WORD)
+            for product in Product.objects.filter(
+                name__icontains=CAMPING_PRODUCTS_SEARCH_WORD
+            )
         ]
-        response = self.client.get(f"{JSON_RESPONSE_CAMPING_PRODUCTS_URL}?page=1&name={CAMPING_PRODUCTS_SEARCH_WORD}")
+        response = self.client.get(
+            f"{JSON_RESPONSE_CAMPING_PRODUCTS_URL}?"
+            f"page=1&name={CAMPING_PRODUCTS_SEARCH_WORD}"
+        )
         self.assertEqual(json.loads(response.content), products)
 
     def test_retrieve_camping_products(self):

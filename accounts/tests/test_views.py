@@ -7,6 +7,7 @@ from product.models import ProductType
 
 MANAGERS_URL = reverse("accounts:manager-list")
 
+
 class PublicManagerTest(TestCase):
 
     def test_manager_list_login_required(self):
@@ -43,4 +44,7 @@ class PrivateManagerTest(TestCase):
         managers = get_user_model().objects.all()
         response = self.client.get(MANAGERS_URL)
         self.assertEqual(response.status_code, 200)
-        self.assertEqual(list(response.context["manager_list"]), list(managers))
+        self.assertEqual(
+            list(response.context["manager_list"]),
+            list(managers)
+        )

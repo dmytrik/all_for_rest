@@ -15,4 +15,7 @@ class ModelsTests(TestCase):
             password="test1234",
             position="grill_seller"
         )
-        self.assertEqual(str(manager), f"{manager.username} ({manager.position})")
+        self.assertEqual(
+            str(manager),
+            f"{manager.username} ({manager.position})"
+        )

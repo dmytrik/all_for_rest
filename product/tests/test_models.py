@@ -37,4 +37,7 @@ class ModelsTests(TestCase):
             description="test_description",
             type=type,
         )
-        self.assertEqual(str(product), f"{product.name} {product.brand} (price = {product.price})")
+        self.assertEqual(
+            str(product),
+            f"{product.name} {product.brand} (price = {product.price})"
+        )

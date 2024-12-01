@@ -75,7 +75,7 @@ class FormsTest(TestCase):
         self.client.post(
             PRODUCT_CREATION_URL,
             data={
-                "name":"test",
+                "name": "test",
                 "price": 20000
             }
         )
@@ -86,7 +86,7 @@ class FormsTest(TestCase):
         self.client.post(
             BRAND_CREATION_URL,
             data={
-                "name":"test"
+                "name": "test"
             }
         )
         brand = Brand.objects.filter(name="test")
@@ -100,7 +100,10 @@ class FormsTest(TestCase):
         product_before = Product.objects.get(name=self.product_data["name"])
 
         response = self.client.post(
-            reverse("product:product-update", kwargs={"pk": product_before.id}),
+            reverse(
+                "product:product-update",
+                kwargs={"pk": product_before.id}
+            ),
             data=self.product_update_data
         )
 

@@ -36,10 +36,25 @@ class ProductType(models.Model):
 class Product(models.Model):
     name = models.CharField(max_length=255)
     price = models.PositiveIntegerField()
-    brand = models.ForeignKey(Brand, on_delete=models.SET_NULL, null=True, related_name="products")
+    brand = models.ForeignKey(
+        Brand,
+        on_delete=models.SET_NULL,
+        null=True, related_name="products"
+    )
     description = models.TextField()
-    type = models.ForeignKey(ProductType, on_delete=models.SET_NULL, null=True, related_name="products")
-    photo = ResizedImageField(force_format="WEBP", quality=75, upload_to="photos/", null=True, blank=True)
+    type = models.ForeignKey(
+        ProductType,
+        on_delete=models.SET_NULL,
+        null=True,
+        related_name="products"
+    )
+    photo = ResizedImageField(
+        force_format="WEBP",
+        quality=75,
+        upload_to="photos/",
+        null=True,
+        blank=True
+    )
 
     def __str__(self):
         return f"{self.name} {self.brand} (price = {self.price})"

@@ -7,6 +7,7 @@ from accounts.forms import ManagerCreationForm
 
 MANAGER_CREATE_URL = reverse("accounts:manager-create")
 
+
 class FormsTest(TestCase):
 
     def setUp(self):
@@ -47,11 +48,21 @@ class FormsTest(TestCase):
             name="grill_products"
         )
         self.client.post(MANAGER_CREATE_URL, data=self.manager_data)
-        manager = get_user_model().objects.get(username=self.manager_data["username"])
-        self.assertEqual(manager.first_name, self.manager_data["first_name"])
-        self.assertEqual(manager.position, self.manager_data["position"])
+        manager = get_user_model().objects.get(
+            username=self.manager_data["username"]
+        )
+        self.assertEqual(
+            manager.first_name,
+            self.manager_data["first_name"]
+        )
+        self.assertEqual(
+            manager.position,
+            self.manager_data["position"]
+        )
 
     def test_creation_manager_with_invalid_data(self):
         self.client.post(MANAGER_CREATE_URL, data=self.manager_invalid_data)
-        manager = get_user_model().objects.filter(username=self.manager_invalid_data["username"])
+        manager = get_user_model().objects.filter(
+            username=self.manager_invalid_data["username"]
+        )
         self.assertEqual(len(manager), 0)

@@ -9,7 +9,11 @@ class Manager(AbstractUser):
         ("camping_seller", "camping_seller"),
     }
 
-    position = models.CharField(max_length=60, choices=TYPE_POSITION, default="furniture_seller")
+    position = models.CharField(
+        max_length=60,
+        choices=TYPE_POSITION,
+        default="furniture_seller"
+    )
 
     class Meta:
         verbose_name = "manager"

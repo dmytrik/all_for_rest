@@ -1,5 +1,5 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.http import HttpRequest, HttpResponse, JsonResponse
+from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views import View, generic
@@ -57,15 +57,17 @@ class CampingProductsView(LoginRequiredMixin, View):
         return render(request, "product/camping_products.html", context)
 
 
-
 class ProductDetailView(LoginRequiredMixin, generic.DetailView):
     model = Product
 
     def get_context_data(self, **kwargs):
         context = super(ProductDetailView, self).get_context_data(**kwargs)
-        condition = ((self.request.user.position == "furniture_seller" and self.object.type.name == "garden_furniture")
-                     or (self.request.user.position == "grill_seller" and self.object.type.name == "grill_products")
-                     or (self.request.user.position == "camping_seller" and self.object.type.name == "camping_products"))
+        condition = ((self.request.user.position == "furniture_seller"
+                      and self.object.type.name == "garden_furniture")
+                     or (self.request.user.position == "grill_seller"
+                         and self.object.type.name == "grill_products")
+                     or (self.request.user.position == "camping_seller"
+                         and self.object.type.name == "camping_products"))
         context["condition"] = condition
         return context
 
@@ -105,4 +107,3 @@ class BrandCreateView(LoginRequiredMixin, generic.CreateView):
     model = Brand
     fields = ("name", "country")
     success_url = reverse_lazy("product:brand-list")
-

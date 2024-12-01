@@ -12,7 +12,8 @@ class JsonFurnitureResponse(View):
     def get(request):
         page = request.GET.get("page")
         name = request.GET.get("name")
-        queryset = Product.objects.select_related("brand").filter(type__name="garden_furniture")
+        queryset = Product.objects.select_related("brand")
+        queryset = queryset.filter(type__name="garden_furniture")
         if name:
             queryset = queryset.filter(name__icontains=name)
         paginator = Paginator(queryset, COUNT_OF_PRODUCTS)
@@ -39,7 +40,8 @@ class JsonGrillProductsResponse(View):
     def get(request):
         page = request.GET.get("page")
         name = request.GET.get("name")
-        queryset = Product.objects.select_related("brand").filter(type__name="grill_products")
+        queryset = Product.objects.select_related("brand")
+        queryset = queryset.filter(type__name="grill_products")
         if name:
             queryset = queryset.filter(name__icontains=name)
         paginator = Paginator(queryset, COUNT_OF_PRODUCTS)
@@ -66,7 +68,8 @@ class JsonCampingProductsResponse(View):
     def get(request):
         page = request.GET.get("page")
         name = request.GET.get("name")
-        queryset = Product.objects.select_related("brand").filter(type__name="camping_products")
+        queryset = Product.objects.select_related("brand")
+        queryset = queryset.filter(type__name="camping_products")
         if name:
             queryset = queryset.filter(name__icontains=name)
         paginator = Paginator(queryset, COUNT_OF_PRODUCTS)
