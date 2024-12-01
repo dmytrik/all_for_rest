@@ -9,9 +9,13 @@ https://docs.djangoproject.com/en/5.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
-
+import os
 from pathlib import Path
 
+from django.conf.global_settings import SECRET_KEY
+from dotenv import load_dotenv
+
+load_dotenv()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -20,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-q#(6y6j#@e8g^i(oggwwzgnvf@b6==^rqrujbg8sl$wfoh9nwd'
+SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -78,10 +82,10 @@ STORAGES = {
     "default": {
         "BACKEND": "storages.backends.dropbox.DropboxStorage",
         "OPTIONS": {
-            'oauth2_access_token': "sl.CBa79Nw94ypQUb-Yd8X69lsXlsNWj1kUoqSDxC7sN3dqmjpE5BtnaOTMucYb_uXE4PFLyc5gqBfptOEbusOFMDKHHZhTCEQebcquSpQ_fzitmGmH_4M528XZxaaHr_5I9ZduhUlmJoXRfEtkC0MT0qs",
-            'oauth2_refresh_token': "QMeKqDCqBHUAAAAAAAAAAZRlrJ6sDaMeGMy41fO9W70t_hU41GydUlXtG4gPuw_f",
-            'app_secret': "84h180i1qby8ccn",
-            'app_key': "z59xzchyohlzt1p",
+            'oauth2_access_token': os.getenv("DROPBOX_ACCESS_TOKEN"),
+            'oauth2_refresh_token': os.getenv("DROPBOX_REFRESH_TOKEN"),
+            'app_secret': os.getenv("DROPBOX_APP_SECRET_KEY"),
+            'app_key': os.getenv("DROPBOX_APP_KEY"),
         },
     },
     "staticfiles": {
