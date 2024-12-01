@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     'product',
     'accounts',
     "debug_toolbar",
-    "widget_tweaks"
+    "widget_tweaks",
+    "django_resized"
 ]
 
 MIDDLEWARE = [

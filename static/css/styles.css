@@ -15,8 +15,15 @@ p {
     padding: 0;
 }
 
-body {
+body, html {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
     color: #212121;
+}
+
+main {
+    flex-grow: 1;
 }
 
 a {
@@ -45,6 +52,7 @@ img {
     padding-right: 20px;
     margin: 0 auto;
 }
+
 
 main .wrapper {
     background-color: #ffffff;
@@ -124,7 +132,6 @@ header .wrapper {
 }
 
 .hero-section {
-    max-width: 1600px;
     background-color: darkgoldenrod;
     background-image: linear-gradient(to right, darkgoldenrod, darkkhaki);
     background-repeat: no-repeat;
@@ -198,16 +205,16 @@ header .wrapper {
 .search-input {
     width: 400px;
     padding: 10px;
-    border: 1px solid #ced4da;
+    border: 1px solid darkgoldenrod;
     border-radius: .25rem;
     transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
 .search-input:hover,
 .search-input:focus {
-    border-color: #80bdff;
+    border-color: darkgoldenrod;
     outline: 0;
-    box-shadow: 0 0 0 .2rem rgba(0, 123, 255, .25);
+    box-shadow: 0 0 0 .2rem rgba(255, 165, 0, .25);
 }
 
 .product-list,
@@ -337,11 +344,10 @@ header .wrapper {
 }
 
 .registr-in-login {
-    margin-bottom: 10px;
-    padding: 3px;
-    border-radius: 5px;
-    color: #ffffff;
-    background-color:cornflowerblue;
+    text-align: center;
+    color: darkgoldenrod;
+    text-decoration: underline;
+    margin-top: 10px;
 }
 
 .form {
@@ -352,16 +358,18 @@ header .wrapper {
     width: 400px;
     border: 2px solid darkgoldenrod;
     border-radius: 10px;
-    padding: 20px 0;
+    padding: 20px;
     margin: 15px auto;
 }
 
 .form-title {
     text-align: center;
+    color: darkgoldenrod;
 }
 
 .form-label {
     margin-bottom: 10px;
+    width: 100%;
 }
 
 .form-label:focus-visible{
@@ -369,14 +377,24 @@ header .wrapper {
 }
 
 .form-p {
-    text-align: center;
+    text-align: left;
     font-size: 18px;
     margin-bottom: 5px;
 }
 
 .form-input {
-    padding: 5px;
-    border-color: darkgrey;
+    padding: 10px;
+    width: 100%;
+    border: 1px solid darkgoldenrod;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.form-input:hover,
+.form-input:focus {
+    border-color: darkgoldenrod;
+    outline: 0;
+    box-shadow: 0 0 0 .2rem rgba(255, 165, 0, .25);
 }
 
 .form.product-form {
@@ -391,10 +409,6 @@ header .wrapper {
     border: 1px solid #ccc;
     box-shadow: 1px 1px 1px #999;
     resize: none;
-}
-
-.form-title {
-    color: cornflowerblue;
 }
 
 .submit {
@@ -489,9 +503,19 @@ header .wrapper {
         padding: 12px;
         font-size: 18px;
     }
-
     .form-input {
         width: 100%;
+        padding: 10px;
+        border: 1px solid darkgoldenrod;
+        border-radius: .25rem;
+        transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    }
+
+    .form-input:hover,
+    .form-input:focus {
+        border-color: darkgoldenrod;
+        outline: 0;
+        box-shadow: 0 0 0 .2rem rgba(255, 165, 0, .25);
     }
 
     .footer {

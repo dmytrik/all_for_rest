@@ -13,29 +13,29 @@
           {% csrf_token %}
           {{ form.non_field_errors }}
           {{ form.errors }}
-          <label for="">
+          <label for="" class="form-label">
             <p class="form-p">Name</p>
             {% render_field form.name class+="form-input" %}
           </label>
-          <label for="">
+          <label for="" class="form-label">
             <p class="form-p">Price</p>
             {% render_field form.price class+="form-input" %}
           </label>
-          <label for="">
+          <label for="" class="form-label">
             <p class="form-p">Brand</p>
             {% render_field form.brand class+="form-input" %}
           </label>
           {% if form.type %}
-            <label for="">
+            <label for="" class="form-label">
               <p class="form-p">Type</p>
               {% render_field form.type class+="form-input" %}
             </label>
           {% endif %}
-          <label for="">
+          <label for="" class="form-label">
             <p class="form-p">Description</p>
             {% render_field form.description class+="form-area" %}
           </label>
-          <label for="">
+          <label for="" class="form-label">
             <p class="form-p">Photo</p>
             {% render_field form.photo class+="form-input" %}
           </label>

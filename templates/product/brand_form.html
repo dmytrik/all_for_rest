@@ -11,11 +11,11 @@
         <h1 class="form-title">{{ object|yesno:"Update,Create" }} brand</h1>
         <form action="" method="post" novalidate class="form product-form">
           {% csrf_token %}
-          <label for="">
+          <label for="" class="form-label">
             <p class="form-p">Name</p>
             {% render_field form.name class+="form-input" %}
           </label>
-          <label for="">
+          <label for="" class="form-label">
             <p class="form-p">Country</p>
             {% render_field form.country class+="form-input" %}
           </label>
