@@ -1,0 +1,1213 @@
+[
+    {
+    "model": "product.producttype",
+    "pk": 1,
+    "fields": {
+        "name": "garden_furniture",
+        "managers": [
+            1
+        ]
+    }
+},
+{
+    "model": "product.producttype",
+    "pk": 2,
+    "fields": {
+        "name": "grill_products",
+        "managers": [
+            2,
+            4
+        ]
+    }
+},
+{
+    "model": "product.producttype",
+    "pk": 3,
+    "fields": {
+        "name": "camping_products",
+        "managers": [
+            3,
+            5
+        ]
+    }
+},
+{
+    "model": "accounts.manager",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$870000$T1OR15qrezsf8lH6kstYmd$nGyGDIYSMPVhBfuFnML6ebsMxL9+SnYF0mCCbey74c4=",
+        "last_login": "2024-12-02T11:05:32.593Z",
+        "is_superuser": true,
+        "username": "dima",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2024-11-22T15:13:36.699Z",
+        "position": "furniture_seller",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.manager",
+    "pk": 2,
+    "fields": {
+        "password": "pbkdf2_sha256$870000$0v6bKAWFuQrn02AOpSDmPW$Tu7OXGmlzEEK5eAcy24BDcml8uMbcZaqA9YKMQuRqRw=",
+        "last_login": "2024-11-28T15:09:43.300Z",
+        "is_superuser": false,
+        "username": "oleh",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-11-23T20:21:17Z",
+        "position": "grill_seller",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.manager",
+    "pk": 3,
+    "fields": {
+        "password": "ihor1234",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "ihor",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-11-23T20:26:00Z",
+        "position": "camping_seller",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.manager",
+    "pk": 4,
+    "fields": {
+        "password": "pbkdf2_sha256$870000$GfDXANrkY0MYFwuGQ0wGHG$h7BdV2dFl4lTFtuRo/A3ZXXsVcey/t2so0q83669RKA=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "test_user",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-11-28T12:05:57.548Z",
+        "position": "grill_seller",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.manager",
+    "pk": 5,
+    "fields": {
+        "password": "pbkdf2_sha256$870000$veL6J3HOvyGuDGbuB6WNWd$jz9w0o6dLRbjSaWUpKP4/cSJGssciHb0U4TxVYLJzJw=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "test_camping",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-11-28T12:12:50.005Z",
+        "position": "camping_seller",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "product.brand",
+    "pk": 1,
+    "fields": {
+        "name": "BellaVita",
+        "country": "Indonesia"
+    }
+},
+{
+    "model": "product.brand",
+    "pk": 2,
+    "fields": {
+        "name": "Indigo",
+        "country": "China"
+    }
+},
+{
+    "model": "product.brand",
+    "pk": 3,
+    "fields": {
+        "name": "Higold",
+        "country": "Germany"
+    }
+},
+{
+    "model": "product.brand",
+    "pk": 4,
+    "fields": {
+        "name": "Bica",
+        "country": "Italy"
+    }
+},
+{
+    "model": "product.brand",
+    "pk": 5,
+    "fields": {
+        "name": "Up",
+        "country": "China"
+    }
+},
+{
+    "model": "product.brand",
+    "pk": 6,
+    "fields": {
+        "name": "Keter",
+        "country": "Finland"
+    }
+},
+{
+    "model": "product.brand",
+    "pk": 7,
+    "fields": {
+        "name": "Cruzo",
+        "country": "Italy"
+    }
+},
+{
+    "model": "product.brand",
+    "pk": 8,
+    "fields": {
+        "name": "Terico",
+        "country": "Germany"
+    }
+},
+{
+    "model": "product.brand",
+    "pk": 9,
+    "fields": {
+        "name": "Ukrainian Constructions",
+        "country": "Ukraine"
+    }
+},
+{
+    "model": "product.brand",
+    "pk": 10,
+    "fields": {
+        "name": "Rat Wood",
+        "country": "Poland"
+    }
+},
+{
+    "model": "product.brand",
+    "pk": 11,
+    "fields": {
+        "name": "Metalzavod",
+        "country": "Ukraine"
+    }
+},
+{
+    "model": "product.brand",
+    "pk": 12,
+    "fields": {
+        "name": "SmokeHouse",
+        "country": "Ukraine"
+    }
+},
+{
+    "model": "product.brand",
+    "pk": 13,
+    "fields": {
+        "name": "Vesuvi",
+        "country": "Ukraine"
+    }
+},
+{
+    "model": "product.brand",
+    "pk": 14,
+    "fields": {
+        "name": "Did Koptenko",
+        "country": "Ukraine"
+    }
+},
+{
+    "model": "product.brand",
+    "pk": 15,
+    "fields": {
+        "name": "Boro",
+        "country": "Ukraine"
+    }
+},
+{
+    "model": "product.brand",
+    "pk": 16,
+    "fields": {
+        "name": "Grilland",
+        "country": "China"
+    }
+},
+{
+    "model": "product.brand",
+    "pk": 17,
+    "fields": {
+        "name": "Camping",
+        "country": "China"
+    }
+},
+{
+    "model": "product.brand",
+    "pk": 18,
+    "fields": {
+        "name": "Skiff",
+        "country": "Ukraine"
+    }
+},
+{
+    "model": "product.brand",
+    "pk": 19,
+    "fields": {
+        "name": "McCinley",
+        "country": "China"
+    }
+},
+{
+    "model": "product.brand",
+    "pk": 20,
+    "fields": {
+        "name": "Novator",
+        "country": "Ukraine"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 2,
+    "fields": {
+        "name": "Avrora",
+        "price": 50000,
+        "brand": 2,
+        "description": "Розміри нижньої частини столу 40х40х36 см. Розміри столу 150х80х70 см зі склом товщиною 5 мм. Спинка велика 65х50 см, спинка мала 61х50 см, спинка Т-подібна 65х50 см. Розміри подушки: великі 60х61х10 см, маленькі 56,5х61х10 см",
+        "type": 1,
+        "photo": "photos/7852407_5_ujv5b1G.webp"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 3,
+    "fields": {
+        "name": "Dominika",
+        "price": 26000,
+        "brand": 2,
+        "description": "диван: 175х72х82,5 см, крісла: 69х72х82,5 см, стіл: 140х80х72 см, подушки.",
+        "type": 1,
+        "photo": "photos/7813789_3.jpeg"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 4,
+    "fields": {
+        "name": "SAE180",
+        "price": 23000,
+        "brand": 2,
+        "description": "стіл: сталева труба: 20х40х1,0 мм, крісло: передня ніжка: 20х40х1,0 мм, задня ніжка: 20х30х1,0 мм товщина: 1,0 мм, металева конструкція, стіл розкладний, максимальне навантаження на крісло - 150 кг, максимальне навантаження на стіл - 100 к",
+        "type": 1,
+        "photo": "photos/7668043_6.webp"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 5,
+    "fields": {
+        "name": "Baltimor",
+        "price": 17000,
+        "brand": 2,
+        "description": "Висота столу: 74 см, Ширина столу: 183 см, Довжина столу: 107 см, Висота стільця: 102 см, Ширина стільця: 66,5 см, Довжина стільця: 73 см",
+        "type": 1,
+        "photo": "photos/7813917_4.webp"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 6,
+    "fields": {
+        "name": "Atlanta",
+        "price": 15000,
+        "brand": 2,
+        "description": "Висота столу: 50 см, Ширина столу: 96 см, Довжина столу: 40 см, Висота стільця: 84 см, Ширина стільця: 65 см, Довжина стільця: 72 см",
+        "type": 1,
+        "photo": "photos/7771585_1.webp"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 7,
+    "fields": {
+        "name": "Wing",
+        "price": 160000,
+        "brand": 3,
+        "description": "Висота столу: 39,5 см, Ширина столу: 80 см, Довжина столу: 120 см",
+        "type": 1,
+        "photo": "photos/7771579_9.jpeg"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 8,
+    "fields": {
+        "name": "New York",
+        "price": 160000,
+        "brand": 3,
+        "description": "Висота столу: 39,5 см, Ширина столу: 80 см, Довжина столу: 120 см",
+        "type": 1,
+        "photo": "photos/7852483_8.webp"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 9,
+    "fields": {
+        "name": "Nofi",
+        "price": 125000,
+        "brand": 3,
+        "description": "Висота столу: 39,5 см, Ширина столу: 80 см, Довжина столу: 120 см",
+        "type": 1,
+        "photo": "photos/7852493_15.webp"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 10,
+    "fields": {
+        "name": "Nola",
+        "price": 85000,
+        "brand": 3,
+        "description": "крісло (800х850х610 мм) – 2 шт, софа (800х1500х610 мм) – 1 шт, стіл (1200х700х400 мм) – 1 шт, софа (800х2150х610 мм) – 1 шт, столики (450х450х450 мм) – 2 шт,",
+        "type": 1,
+        "photo": "photos/7852485_1.webp"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 11,
+    "fields": {
+        "name": "Bay",
+        "price": 63600,
+        "brand": 3,
+        "description": "стіл (1100х600х400 мм) – 1 шт, крісло (765х805х640 мм) – 1 шт, лівий двомісний диван (765х1425х640 мм) – 1 шт, середній кутовий диван (765х765х640 мм) – 1 шт, правий двомісний диван (765х1425х640 мм) – 1 шт",
+        "type": 1,
+        "photo": "photos/7852505_10.webp"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 12,
+    "fields": {
+        "name": "Marble Set",
+        "price": 104000,
+        "brand": 1,
+        "description": "Висота столу: 78 см, Ширина столу: 110 см, Довжина столу: 280 см, Висота стільця: 100 см, Ширина стільця: 59,5 см, Довжина стільця: 64 см",
+        "type": 1,
+        "photo": "photos/855444_16.webp"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 13,
+    "fields": {
+        "name": "Pasifik",
+        "price": 98000,
+        "brand": 1,
+        "description": "Висота столу: 73 см, Ширина столу: 90 см, Довжина столу: 150 см",
+        "type": 1,
+        "photo": "photos/7813933_9.jpeg"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 14,
+    "fields": {
+        "name": "Corner's Metal Set",
+        "price": 85000,
+        "brand": 1,
+        "description": "Висота столу: 56 см Ширина столу: 122 см, Довжина столу: 122 см",
+        "type": 1,
+        "photo": "photos/763148_10.webp"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 15,
+    "fields": {
+        "name": "Richard",
+        "price": 85000,
+        "brand": 1,
+        "description": "Висота столу: 77 см, Ширина столу: 85 см, Довжина столу: 145 см, Висота стільця: 97,5 см, Ширина стільця: 84 см, Довжина стільця: 83 см, Вага: 78,7 кг",
+        "type": 1,
+        "photo": "photos/7852381_1.webp"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 16,
+    "fields": {
+        "name": "Richard II",
+        "price": 85000,
+        "brand": 1,
+        "description": "Висота столу: 77 см, Ширина столу: 85 см, Довжина столу: 145 см, Висота стільця: 98 см, Ширина стільця: 83 см, Довжина стільця: 84 см",
+        "type": 1,
+        "photo": "photos/1365378_4.webp"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 17,
+    "fields": {
+        "name": "Nebraska 3",
+        "price": 18000,
+        "brand": 4,
+        "description": "Висота столу: 40,5 см, Ширина столу: 54,5 см, Довжина столу: 60 см, Висота стільця: 79 см, Ширина стільця: 57,5 см, Довжина стільця: 75 см, Висота: 79 см, Ширина: 57,5 см Довжина: 1,88 м Вага: 52,5 кг",
+        "type": 1,
+        "photo": "photos/7275321_6.jpeg"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 18,
+    "fields": {
+        "name": "Nebraska Corner",
+        "price": 16000,
+        "brand": 4,
+        "description": "Nebraska Corner - це надзвичайно елегантний набір, який чудово освітлить терасу чи альтанку, створивши при цьому комфортний куточок для відпочинку. Подушки включені куточок на 5 осіб + журнальний столик Переваги: Комплект складається з 5-місного кутового дивана та прямокутного журнального столика . У дивана дуже зручна спинка. Меблі стійкі до пошкоджень і різних погодних умов. Додатковим елементом комплекту є м'які подушки , які роблять відпочинок ще приємнішим. Матеріали: Меблі виготовлені з білого пластику з дуже привабливою структурою, яка нагадує плетінку ротанга.",
+        "type": 1,
+        "photo": "photos/11a049fd-52af-45bb-afb2-586d1e725098.jpg"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 19,
+    "fields": {
+        "name": "Venezia 3",
+        "price": 15000,
+        "brand": 4,
+        "description": "Висота столу: 40,5 см, Ширина столу: 64,5 см, Довжина столу: 60 см, Висота стільця: 76 см, Ширина стільця: 54,5 см, Довжина стільця: 63 см, Розмір лавки: 172x64,5x76 см, Вага: 35 кг",
+        "type": 1,
+        "photo": "photos/8129217_1.jpeg"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 20,
+    "fields": {
+        "name": "Venezia 2",
+        "price": 12000,
+        "brand": 4,
+        "description": "Висота столу: 40,5 см, Ширина столу: 54,5 см, Довжина столу: 60 см, Висота стільця: 76 см, Ширина стільця: 64,5 см, Довжина стільця: 63 см, Висота: 76 см, Ширина: 64,5 см, Довжина: 1,17 м, Вага: 33 кг",
+        "type": 1,
+        "photo": "photos/7275319_6.jpeg"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 21,
+    "fields": {
+        "name": "Lido",
+        "price": 6500,
+        "brand": 4,
+        "description": "Висота столу: 46 см, Ширина столу: 39 см, Довжина столу: 39 см, Висота стільця: 90 см, Ширина стільця: 59 см, Довжина стільця: 60 см, Вага: 16 кг",
+        "type": 1,
+        "photo": "photos/7275311_6.jpeg"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 22,
+    "fields": {
+        "name": "Rita",
+        "price": 3200,
+        "brand": 5,
+        "description": "Висота столу: 70 см, Діаметр столу: 60 см, Висота стільця: 73 см, Ширина стільця: 58 см, Довжина стільця: 53 см",
+        "type": 1,
+        "photo": "photos/6615867_7.webp"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 23,
+    "fields": {
+        "name": "Bagama",
+        "price": 20000,
+        "brand": 5,
+        "description": "навантаження на крісло – 75 кг, навантаження на софу – 110 кг, розмір 2-місної софи – 113x63x70 см, розмір подушки на диван – 91x34 см, розмір подушки на крісло – 38x34 см, розмір сидіння на диван – 96x46 см, розмір сидіння на крісло – 49x48 см",
+        "type": 1,
+        "photo": "photos/1011643_1.webp"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 24,
+    "fields": {
+        "name": "Kuta",
+        "price": 15000,
+        "brand": 5,
+        "description": "Висота столу: 46 см, Ширина столу: 60 см, Довжина столу: 60 см, Висота стільця: 70 см, Ширина стільця: 49 см, Довжина стільця: 65 см",
+        "type": 1,
+        "photo": "photos/1011642_3.webp"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 25,
+    "fields": {
+        "name": "Sofia",
+        "price": 15000,
+        "brand": 5,
+        "description": "Висота столу: 72 см, Ширина столу: 90 см, Довжина столу: 150 см, Висота стільця: 98 см, Ширина стільця: 55 см, Довжина стільця: 58 см",
+        "type": 1,
+        "photo": "photos/618649_12.webp"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 26,
+    "fields": {
+        "name": "Olivia",
+        "price": 63000,
+        "brand": 10,
+        "description": "Висота столу: 77 см, Ширина столу: 153 см, Довжина столу: 153 см, Висота стільця: 87 см, Ширина стільця: 57 см, Довжина стільця: 57 см, Вага: 110 кг",
+        "type": 1,
+        "photo": "photos/96b6a6d2-4ceb-475e-9bde-2fbc47fd58a4.jpg"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 27,
+    "fields": {
+        "name": "Elza",
+        "price": 50000,
+        "brand": 10,
+        "description": "Висота столу: 73 см, Ширина столу: 90 см, Довжина столу: 150 см",
+        "type": 1,
+        "photo": "photos/8621721_5.webp"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 29,
+    "fields": {
+        "name": "ElEMENTS",
+        "price": 31000,
+        "brand": 6,
+        "description": "Набір садовий пластиковий ELEMENTS Набір ELEMENTS дозволить вам організувати сучасну зону відпочинку на відкритому повітрі відповідно до ваших побажань. А якщо вам іноді знадобиться більше крісел замість дивана, або інше розташування, то це не проблема для комплекту. Завдяки інтелектуальній модульній системі, яка пропонує багато можливих конфігурацій, ви просто переміщуєте та закріплюєте окремі елементи в потрібному місці.",
+        "type": 1,
+        "photo": "photos/e4382645-be52-4fee-b3b1-67f1817b9033.webp"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 30,
+    "fields": {
+        "name": "California",
+        "price": 28000,
+        "brand": 6,
+        "description": "Комплект пластикових садових меблів Keter California chaise longue Стильно оновіть свій сад або терасу за допомогою елегантного дивана California . Набір для відпочинку складається зі зручного тримісного дивана, столика та пуфика з подушкою, який можна скласти за власним бажанням. Товсті подушки входять у комплект і підвищують комфорт. З цим набором для відпочинку ви зможете відпочити стильно.",
+        "type": 1,
+        "photo": "photos/254683db-7843-4228-b74d-b2ea06581419.webp"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 31,
+    "fields": {
+        "name": "Provence",
+        "price": 26000,
+        "brand": 6,
+        "description": "Набір пластикових садових меблів (кутовий диван+столик) Keter Provence Set With Coffee Table - це пропозиція, яка виправдає очікування всіх тих, хто шукає зручні, елегантні та стильні рішення. Дизайн меблів був створений на основі сучасних світових тенденцій, тому відповідає всім вимогам в області декору при облаштуванні садової території або тераси. Комплект меблів зручний у використанні, простий, стильний і легкий у догляді, він завжди доповнить вашу терасу і надасть свіжості затишному куточку в саду.",
+        "type": 1,
+        "photo": "photos/44d283b0-251a-4f9d-9e65-17ef9e9551fb.webp"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 32,
+    "fields": {
+        "name": "Bahamas",
+        "price": 24000,
+        "brand": 6,
+        "description": "Комплект меблів Keter Bahama Fiesta - краще рішення об'єднати обідню групу і зону відпочинку! Комплект складається з двох 2-місних диванів, двох зручних крісел і прямокутного обіднього столу. М'які подушки на сидіннях дозволять комфортно розміститися на свіжому повітрі за сімейним обідом. Меблі виконана з поліпропілену, стійкі до атмосферних погодних умов і УФ-променів. Завдяки цьому меблі прослужить довго, не вигорять на сонці, не втрачаючи свою структуру під впливом вологи. Меблі не вимагають догляду, при забрудненні досить обробити ганчіркою з мильним розчином.",
+        "type": 1,
+        "photo": "photos/c603e91a-4616-49dd-858c-91c4ec6bb736.webp"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 33,
+    "fields": {
+        "name": "Basket",
+        "price": 44800,
+        "brand": 7,
+        "description": "Комплект ТМ CRUZO Баскет складається з двомісної софи, двох крісел та кавового столика. Комплект ідеально підійде для приміщень, балконів, терас. Якість матеріалів і виконання дозволяє меблям однаково добре переносити будь-які зміни погоди. Такі плетені вироби стануть для свого господаря довгостроковим і вигідним придбанням.",
+        "type": 1,
+        "photo": "photos/f242305f-f617-4eb1-9382-e275cf4dbc5f.jpg"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 34,
+    "fields": {
+        "name": "Dias",
+        "price": 40500,
+        "brand": 7,
+        "description": "кутовий модуль (84х84х77,5 см),середній модуль (80х84х77,5 см) – 2 шт, пуф (80х80х46,5 см), кавовий стіл (80х79х26 см)",
+        "type": 1,
+        "photo": "photos/6673375_5.webp"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 35,
+    "fields": {
+        "name": "Bukovyna",
+        "price": 35000,
+        "brand": 7,
+        "description": "Висота столу: 78 см, Ширина столу: 76 см, Довжина столу: 160 см, Висота стільця: 100 см, Ширина стільця: 60 см, Довжина стільця: 63 см, Вага: 60 кг",
+        "type": 1,
+        "photo": "photos/7991001_3.webp"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 36,
+    "fields": {
+        "name": "Ampir",
+        "price": 175000,
+        "brand": 8,
+        "description": "Висота столу: 75 см, Ширина столу: 100 см, Довжина столу: 220 см, Висота стільця: 75 см, Ширина стільця: 900 см, Довжина стільця: 110 см, Висота: 75 см, Ширина: 90 см, Довжина: 2,2 м, Вага: 160 кг",
+        "type": 1,
+        "photo": "photos/7144675_2.jpeg"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 37,
+    "fields": {
+        "name": "Pandora",
+        "price": 124000,
+        "brand": 8,
+        "description": "Діаметр столу: 100 см, Висота стільця: 80 см, Ширина стільця: 109 см, Довжина стільця: 115,5 см, Висота: 80 см, Ширина: 109 см, Довжина: 1,865 м, Вага: 80 кг",
+        "type": 1,
+        "photo": "photos/7144633_3.jpeg"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 38,
+    "fields": {
+        "name": "London",
+        "price": 95000,
+        "brand": 8,
+        "description": "Висота столу: 75 см, Ширина столу: 90 см, Довжина столу: 160 см, Висота стільця: 110 см, Ширина стільця: 93 см, Довжина стільця: 64 см, Вага: 90 кг",
+        "type": 1,
+        "photo": "photos/6723299_7.jpeg"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 39,
+    "fields": {
+        "name": "Barcelona",
+        "price": 40000,
+        "brand": 8,
+        "description": "Висота столу: 75 см, Діаметр столу: 90 см, Висота стільця: 81 см, Ширина стільця: 75 см, Довжина стільця: 68 см, Вага: 57 кг",
+        "type": 1,
+        "photo": "photos/7144577_1.jpeg"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 40,
+    "fields": {
+        "name": "Mamasan",
+        "price": 27000,
+        "brand": 9,
+        "description": "Висота столу: 67 см, Ширина столу: 81,5 см, Діаметр столу: 81,5 см, Висота стільця: 92 см, Ширина стільця: 106 см, Довжина стільця: 106 см",
+        "type": 1,
+        "photo": "photos/1424927_12.jpeg"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 41,
+    "fields": {
+        "name": "Forza",
+        "price": 23000,
+        "brand": 9,
+        "description": "Висота столу: 44 см, Ширина столу: 87,5 см, Довжина столу: 87,5 см, Висота стільця: 74 см, Ширина стільця: 61 см, Довжина стільця: 60 см, Висота: 74 см, Ширина: 60 см, Довжина: 135 м",
+        "type": 1,
+        "photo": "photos/6377621_1.webp"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 42,
+    "fields": {
+        "name": "Gracia",
+        "price": 10000,
+        "brand": 9,
+        "description": "Висота столу: 71,2 см, Ширина столу: 77,1 см, Довжина столу: 167,5 см, Висота стільця: 91,5 см, Ширина стільця: 57 см",
+        "type": 1,
+        "photo": "photos/3198088_9.jpeg"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 43,
+    "fields": {
+        "name": "Metalzavod 9-4N",
+        "price": 2800,
+        "brand": 11,
+        "description": "Мангал Metalzavod 9-4N на 9 шампурів 4 мм зі знімними ніжками",
+        "type": 2,
+        "photo": "photos/6762395_2.webp"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 44,
+    "fields": {
+        "name": "Metalzavod M12-4D",
+        "price": 4200,
+        "brand": 11,
+        "description": "Мангал Metalzavod M12-4D на 12 шампурів 4 мм на дровнику",
+        "type": 2,
+        "photo": "photos/6762407_1.webp"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 45,
+    "fields": {
+        "name": "Metalzavod MB12-4D",
+        "price": 7100,
+        "brand": 11,
+        "description": "Мангал-барбекю Metalzavod MB12-4D на 12 шампурів 4 мм на дровнику",
+        "type": 2,
+        "photo": "photos/6764175_1.webp"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 46,
+    "fields": {
+        "name": "Мангал-барбекю Metalzavod MB15-3D",
+        "price": 8500,
+        "brand": 11,
+        "description": "Мангал-барбекю Metalzavod на 15 шампурів 3 мм з дровником 151,5х106,5х39,5 см (MB15-3D)",
+        "type": 2,
+        "photo": "photos/589fc926-8db1-47a8-a775-22a4f71a8dfc.webp"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 47,
+    "fields": {
+        "name": "Smoke House Case 8",
+        "price": 1200,
+        "brand": 12,
+        "description": "Розкладний мангал місткістю 8 шампурів з чорної сталі. Товщина стінок – 2 мм., що не обважнює конструкцію. Виготовлений за допомогою лазерного різання на високоточному устаткуванні. Міцний - не гнеться, не міняє форму. Легко трансформується у валізу, не займає багато місця.",
+        "type": 2,
+        "photo": "photos/1564998_11.webp"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 48,
+    "fields": {
+        "name": "МВ6/3",
+        "price": 700,
+        "brand": 12,
+        "description": "Мангал має розбірно-сладну конструкцію , а також міцну 2мм сталь, яка в одночас міцна та легка , що дозволяє з легкістю переносити його в будьяке місце",
+        "type": 2,
+        "photo": "photos/23b0980d-0efb-47e3-8180-b749e7d8c946.webp"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 49,
+    "fields": {
+        "name": "Smoke House Garden",
+        "price": 11000,
+        "brand": 12,
+        "description": "Довжина: 100 см, Ширина: 60 см, Висота: 120 см, Товщина матеріалу: 3 мм, Вага: 40 кг",
+        "type": 2,
+        "photo": "photos/7163369_3.webp"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 50,
+    "fields": {
+        "name": "Vesuvi Smart",
+        "price": 1400,
+        "brand": 13,
+        "description": "Довжина: 47 см, Ширина: 36 см, Висота: 27 см, Товщина матеріалу: 2 мм, Вага: 6,1 кг",
+        "type": 2,
+        "photo": "photos/2262396_2.webp"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 51,
+    "fields": {
+        "name": "Vesuvi Camping",
+        "price": 1400,
+        "brand": 13,
+        "description": "Довжина: 44 см, Ширина: 31 см, Висота: 46,5 см, Товщина матеріалу: 2 мм, Вага: 7 кг",
+        "type": 2,
+        "photo": "photos/2262394_2.webp"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 52,
+    "fields": {
+        "name": "Vesuvi Scout",
+        "price": 2600,
+        "brand": 13,
+        "description": "Довжина: 63 см, Ширина: 37 см, Висота: 71 см, Товщина матеріалу: 3 мм, Вага: 16 кг",
+        "type": 2,
+        "photo": "photos/6680097_1.webp"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 54,
+    "fields": {
+        "name": "Koptenko for 8 skewers",
+        "price": 1700,
+        "brand": 14,
+        "description": "На стінках і днищі є ребра жорсткості, Товщина приладу в складеному стані складає 3 см, Мангал можна складати у формі валізи з ручкою, що робить його зручним при перенесенні, У комплект входять знімні ніжки, в стінках прорізані пази для рівномірної установки шампурів, В якості палива можуть використовуватися деревне вугілля або дрова",
+        "type": 2,
+        "photo": "photos/1010719_1.webp"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 55,
+    "fields": {
+        "name": "Stove for a cauldron",
+        "price": 3500,
+        "brand": 14,
+        "description": "Ширина: 47 см Висота: 70 см Вага: 9 кг",
+        "type": 2,
+        "photo": "photos/1010723_1.webp"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 56,
+    "fields": {
+        "name": "Koptenko stationary",
+        "price": 9000,
+        "brand": 14,
+        "description": "Розмір: 105х34х80 см Товщина матеріалу: 2 мм Вага: 13 кг",
+        "type": 2,
+        "photo": "photos/1010722_1.webp"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 57,
+    "fields": {
+        "name": "Boro Garden",
+        "price": 5200,
+        "brand": 15,
+        "description": "Довжина: 80 см Ширина: 32 см Висота: 85 см Товщина матеріалу: 3 мм Вага: 30 кг",
+        "type": 2,
+        "photo": "photos/7398231_1.webp"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 58,
+    "fields": {
+        "name": "Boro Patriot",
+        "price": 9000,
+        "brand": 15,
+        "description": "Довжина: 72 см Ширина: 32 см Висота: 85 см Товщина матеріалу: 3 мм Вага: 20,715 кг",
+        "type": 2,
+        "photo": "photos/7398241_1.webp"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 59,
+    "fields": {
+        "name": "Boro Trysub",
+        "price": 9000,
+        "brand": 15,
+        "description": "Довжина: 138 см Ширина: 36 см Висота: 76 см Товщина матеріалу: 3 мм Вага: 38,11 кг",
+        "type": 2,
+        "photo": "photos/7398239_1.webp"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 60,
+    "fields": {
+        "name": "Grill grate Grilland",
+        "price": 487,
+        "brand": 16,
+        "description": "Решітка-гриль Grilland з антипригарним покриттям 38x26x5,5",
+        "type": 2,
+        "photo": "photos/432298_9.webp"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 61,
+    "fields": {
+        "name": "BQ2104",
+        "price": 239,
+        "brand": 16,
+        "description": "Решітка-гриль Grilland для гамбургерів хромована 60х35х25 см",
+        "type": 2,
+        "photo": "photos/1011650_4.webp"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 62,
+    "fields": {
+        "name": "BQ2133",
+        "price": 239,
+        "brand": 16,
+        "description": "Решітка-гриль Grilland для сосисок та ковбас хромована",
+        "type": 2,
+        "photo": "photos/1011653_4.webp"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 63,
+    "fields": {
+        "name": "Multi",
+        "price": 2684,
+        "brand": 17,
+        "description": "Розмір: 33,5 x 25 x 27,5 см Об'єм: 17 л Вага: 2,37 кг",
+        "type": 3,
+        "photo": "photos/1010727_6.jpeg"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 64,
+    "fields": {
+        "name": "Jungle",
+        "price": 2839,
+        "brand": 17,
+        "description": "Глибина: 30 см Ширина: 54 см Висота: 23 см Об'єм: 20 л Вага: 2 кг",
+        "type": 3,
+        "photo": "photos/3235570_2.webp"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 65,
+    "fields": {
+        "name": "Easy go",
+        "price": 3400,
+        "brand": 17,
+        "description": "Глибина: 23 см Ширина: 30 см Висота: 54 см Розмір: 54х23х30 см Об'єм: 15 л Вага: 2 кг",
+        "type": 3,
+        "photo": "photos/2075308_2.jpeg"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 66,
+    "fields": {
+        "name": "HB-15",
+        "price": 1025,
+        "brand": 17,
+        "description": "Каремат туристичний для пікніка Кемпінг HB-15 складний двосторонній непромокний",
+        "type": 3,
+        "photo": "photos/8e555051-23c4-4482-b96c-d79af256ea50.jpg"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 67,
+    "fields": {
+        "name": "HB-10",
+        "price": 1060,
+        "brand": 17,
+        "description": "Килимок складний Кемпінг HB-10 з ручками двосторонній",
+        "type": 3,
+        "photo": "photos/2e35df93-3312-4d35-9e83-0d17e6356c82.jpg"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 68,
+    "fields": {
+        "name": "CA-171",
+        "price": 2100,
+        "brand": 17,
+        "description": "Глибина: 9 см Ширина: 20 см Висота: 36 см Розмір: 20х9х36 см Вага: 1,2 кг",
+        "type": 3,
+        "photo": "photos/1268652_4.jpeg"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 69,
+    "fields": {
+        "name": "SKIF Outdoor Compact",
+        "price": 169,
+        "brand": 18,
+        "description": "складається одним рухом, дуже компактний, може служити як варіант постійного перевезення в багажнику",
+        "type": 3,
+        "photo": "photos/3139568_1.webp"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 70,
+    "fields": {
+        "name": "SKIF Outdoor Catcher",
+        "price": 999,
+        "brand": 18,
+        "description": "легко транспортується, для відпочинку на відкритому повітрі, зручний для перенесення, легке складання",
+        "type": 3,
+        "photo": "photos/6855923_4.webp"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 71,
+    "fields": {
+        "name": "SKIF Outdoor Comfort Plus",
+        "price": 740,
+        "brand": 18,
+        "description": "зручний для перенесення, легке складання, для відпочинку на відкритому повітрі, легко транспортується, водонепроникне покриття",
+        "type": 3,
+        "photo": "photos/8518759_7.webp"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 72,
+    "fields": {
+        "name": "SKIF Outdoor Standard M",
+        "price": 1097,
+        "brand": 18,
+        "description": "зручний для перенесення, для відпочинку на відкритому повітрі, легке складання, легко транспортується",
+        "type": 3,
+        "photo": "photos/2553874_3.webp"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 73,
+    "fields": {
+        "name": "SKIF Outdoor Comfort L",
+        "price": 2995,
+        "brand": 18,
+        "description": "Довжина: 140 см Ширина: 70 см Висота: 70 см Вага: 5150 г Розміри в складеному вигляді: 72х25х48 см",
+        "type": 3,
+        "photo": "photos/2553862_3.webp"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 74,
+    "fields": {
+        "name": "CAMP COMFORT 10L",
+        "price": 909,
+        "brand": 19,
+        "description": "мінімальна температура в екстремальних умовах: -1 °C, максимальна температура комфорту: +13 °C, мінімальна температура комфорту: +10 °C",
+        "type": 3,
+        "photo": "photos/2793876_2.webp"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 75,
+    "fields": {
+        "name": "CAMP ACTIVE 10",
+        "price": 779,
+        "brand": 19,
+        "description": "мінімальна температура комфорту: +10 °C, максимальна температура комфорту: +13 °C, мінімальна температура в екстремальних умовах: -1 °C",
+        "type": 3,
+        "photo": "photos/2793880_8.webp"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 76,
+    "fields": {
+        "name": "Trekker S R 10",
+        "price": 2719,
+        "brand": 19,
+        "description": "мінімальна температура комфорту: +10 °C, максимальна температура комфорту: +13 °C, мінімальна температура в екстремальних умовах: -1 °C",
+        "type": 3,
+        "photo": "photos/7635641_1.webp"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 77,
+    "fields": {
+        "name": "Novator SET-6",
+        "price": 5899,
+        "brand": 20,
+        "description": "Це якісний комплект меблів для відпочинку на природі. Каркас стола виготовлений із труби діаметром 20 мм, ніжки з труби діаметром 22 мм. Для більшої безпеки ніжки фіксуються різьбовими фіксаторами які забезпечують стабільність конструкції. Стільниця виготовлена із ламінатної водостійкої плити товщиною 8 мм.",
+        "type": 3,
+        "photo": "photos/a580125c-453a-4c43-a37a-72e889bc8aac.webp"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 78,
+    "fields": {
+        "name": "Gardlov 17966",
+        "price": 5800,
+        "brand": 20,
+        "description": "легко транспортується, зручний для перенесення, легке складання, для відпочинку на відкритому повітр",
+        "type": 3,
+        "photo": "photos/b0271551-250d-4a9e-b834-c6d04fb34f90.webp"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 79,
+    "fields": {
+        "name": "Grand Picnic",
+        "price": 2799,
+        "brand": 20,
+        "description": "Стіл для кемпінгу – 1 шт,; Стілець для кемпінгу: 4 шт,; Чохол для транспортування набору",
+        "type": 3,
+        "photo": "photos/1694c726-318e-4764-a6a7-b2eb814c82dd.webp"
+    }
+},
+{
+    "model": "product.product",
+    "pk": 80,
+    "fields": {
+        "name": "Easy Camping",
+        "price": 1799,
+        "brand": 20,
+        "description": "швидкознімна фіксація, легко транспортується, зручний для перенесення, легке складання, для відпочинку на відкритому повітрі",
+        "type": 3,
+        "photo": "photos/5bfee966-e175-401b-a92a-c0ab4d7f59c3.webp"
+    }
+}
+]

@@ -133,8 +133,9 @@ header .wrapper {
 
 .hero-section {
     background-color: darkgoldenrod;
-    background-image: linear-gradient(to right, darkgoldenrod, darkkhaki);
+    background-image: url("https://images.unsplash.com/photo-1630752708689-02c8636b9141?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2490&q=80"), linear-gradient(to right, darkgoldenrod, darkkhaki);
     background-repeat: no-repeat;
+    background-position: center;
     background-size: cover;
     margin-left: auto;
     margin-right: auto;
