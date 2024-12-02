@@ -84,6 +84,11 @@ class ProductUpdateView(LoginRequiredMixin, generic.UpdateView):
     success_url = reverse_lazy("product:index")
 
 
+class ProductDeleteView(LoginRequiredMixin, generic.DeleteView):
+    model = Product
+    success_url = reverse_lazy("product:index")
+
+
 class BrandListView(LoginRequiredMixin, generic.ListView):
     model = Brand
 

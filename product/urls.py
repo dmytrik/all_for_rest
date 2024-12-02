@@ -11,6 +11,7 @@ from product.views import (
     BrandDeleteView,
     ProductDetailView,
     ProductUpdateView,
+    ProductDeleteView,
     ProductCreateView
 )
 from product.views_json_response import (
@@ -61,6 +62,11 @@ urlpatterns = [
         "products/<int:pk>/update/",
         ProductUpdateView.as_view(),
         name="product-update"
+    ),
+    path(
+        "products/<int:pk>/delete/",
+        ProductDeleteView.as_view(),
+        name="product-delete"
     ),
     path(
         "products/create/",

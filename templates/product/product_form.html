@@ -9,7 +9,7 @@
   <section class="section">
     <div class="wrapper">
         <h1 class="form-title">{{ object|yesno:"Update,Create" }} product</h1>
-        <form action="" method="post" novalidate class="form product-form">
+        <form action="" method="post" novalidate class="form product-form" enctype="multipart/form-data">
           {% csrf_token %}
           {{ form.non_field_errors }}
           {{ form.errors }}

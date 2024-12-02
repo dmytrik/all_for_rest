@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block content %}
-  <div class="section">
+  <section class="section">
     <div class="wrapper">
       <div class="detail-image-container">
         <img src="{{ product.photo.url }}" alt="picture" class="product-img-detail">
@@ -20,7 +20,7 @@
         {% if condition %}
           <a href="{% url "product:product-update" product.id %}" class="update-btn nav-btn">Update</a>
           {% if user.is_staff %}
-          <a href="" class="delete-btn nav-btn">Delete</a>
+          <a href="{% url "product:product-delete" product.id %}" class="delete-btn nav-btn">Delete</a>
           {% endif %}
         {% endif %}
       </div>
@@ -40,5 +40,5 @@
       {% endfor %}
       </ul>
     </div>
-  </div>
+  </section>
 {% endblock %}

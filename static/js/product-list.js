@@ -1,4 +1,4 @@
-const COUNT_OF_PRODUCTS = 9
+const COUNT_OF_PRODUCTS = 9;
 
 let current_page = 1;
 const load = document.querySelector(".load");
@@ -13,10 +13,10 @@ form.addEventListener("submit", search_product);
 
 function search_product(e) {
     e.preventDefault();
-    current_page = 1
-    search_value = e.target.name.value
-    get_products(e.target.name.value)
-    form.reset()
+    current_page = 1;
+    search_value = e.target.name.value;
+    get_products(e.target.name.value);
+    form.reset();
 }
 
 function get_products(name = "") {
