@@ -31,3 +31,9 @@ class ManagerCreateView(generic.CreateView):
     model = Manager
     form_class = ManagerCreationForm
     success_url = reverse_lazy("login")
+
+
+class ManagerUpdateView(generic.UpdateView):
+    model = Manager
+    fields = ("username", "position")
+    success_url = reverse_lazy("accounts:manager-list")
