@@ -18,9 +18,9 @@
       </div>
       <div class="options-container">
         {% if condition %}
-          <a href="{% url "product:product-update" product.id %}" class="update-btn nav-btn">Update</a>
+          <a href="{% url "product:product-update" pk=product.id %}" class="update-btn nav-btn">Update</a>
           {% if user.is_staff %}
-          <a href="{% url "product:product-delete" product.id %}" class="delete-btn nav-btn">Delete</a>
+          <a href="{% url "product:product-delete" pk=product.id %}" class="delete-btn nav-btn">Delete</a>
           {% endif %}
         {% endif %}
       </div>
