@@ -6,7 +6,7 @@ from django.views import View, generic
 
 from accounts.models import Manager
 from product.models import Product, Brand
-from product.forms import ProductSearchForm
+from product.forms import ProductSearchForm, BrandSearchForm
 
 
 class Index(LoginRequiredMixin, View):
@@ -91,6 +91,21 @@ class ProductDeleteView(LoginRequiredMixin, generic.DeleteView):
 
 class BrandListView(LoginRequiredMixin, generic.ListView):
     model = Brand
+    paginate_by = 9
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super(BrandListView, self).get_context_data(**kwargs)
+        context["search_form"] = BrandSearchForm()
+        return context
+
+    def get_queryset(self):
+        queryset = Brand.objects.all()
+        form = BrandSearchForm(self.request.GET)
+        if form.is_valid():
+            return queryset.filter(
+                name__icontains=form.cleaned_data["name"]
+            )
+        return queryset
 
 
 class BrandDetailView(LoginRequiredMixin, generic.DetailView):

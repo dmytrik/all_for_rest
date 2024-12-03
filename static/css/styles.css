@@ -243,7 +243,8 @@ header .wrapper {
 .load {
     display: block;
     margin: 50px auto 0px auto;
-    background-color: cornflowerblue;
+    background-color: darkgoldenrod;
+    background-image: linear-gradient(to right, darkgoldenrod, darkkhaki);
     color: white;
     font-size: 24px;
     padding:20px;
@@ -445,6 +446,25 @@ header .wrapper {
     background-color: darkgoldenrod;
     background-image: linear-gradient(to right, darkgoldenrod, darkkhaki);
     color: #ffffff;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 50px;
+}
+
+.page-item {
+    padding: 10px;
+    background-color: darkgoldenrod;
+    color: #ffffff;
+    bord-radius: 10px;
+    border-radius: 10px;
+}
+
+.page-item.active {
+    background-image: linear-gradient(to right, darkgoldenrod, darkkhaki);
 }
 
 .hidden {

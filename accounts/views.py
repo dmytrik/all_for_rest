@@ -3,11 +3,29 @@ from django.urls import reverse_lazy
 from django.views import generic
 
 from accounts.models import Manager
-from accounts.forms import ManagerCreationForm
+from accounts.forms import (
+    ManagerCreationForm,
+    ManagerSearchForm
+)
 
 
 class ManagerListView(LoginRequiredMixin, generic.ListView):
     model = Manager
+    paginate_by = 6
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super(ManagerListView, self).get_context_data(**kwargs)
+        context["search_form"] = ManagerSearchForm()
+        return context
+
+    def get_queryset(self):
+        queryset = Manager.objects.all()
+        form = ManagerSearchForm(self.request.GET)
+        if form.is_valid():
+            return queryset.filter(
+                username__icontains=form.cleaned_data["username"]
+            )
+        return queryset
 
 
 class ManagerDetailView(LoginRequiredMixin, generic.DetailView):
