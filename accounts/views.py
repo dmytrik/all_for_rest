@@ -15,7 +15,12 @@ class ManagerListView(LoginRequiredMixin, generic.ListView):
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super(ManagerListView, self).get_context_data(**kwargs)
-        context["search_form"] = ManagerSearchForm()
+        username = self.request.GET.get("username", "")
+        context["search_form"] = ManagerSearchForm(
+            initial={
+                "username": username
+            }
+        )
         return context
 
     def get_queryset(self):
