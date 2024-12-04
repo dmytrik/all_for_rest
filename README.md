@@ -1,6 +1,11 @@
 # All 4 Rest
 
-Welcome to **All 4 Rest** — a robust system for managing products, brands, and their managers, tailored to support diverse organizational roles. This platform streamlines handling product types, brand information, and hierarchical positions within the organization.
+Welcome to **All 4 Rest** — a robust system for managing products, brands, and their managers, tailored to support diverse organizational roles. This platform streamlines handling product types, brand information, and hierarchical positions within the organization.  
+Link on live page: https://all-for-rest.onrender.com/  
+**User for testing:** login - oleh, password - oleh1234  
+**Note:** This user is grill seller, so he can change only grill products, but no delete. Delete product can only superuser.  
+
+
 
 ---
 

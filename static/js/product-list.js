@@ -2,6 +2,7 @@ const COUNT_OF_PRODUCTS = 9;
 
 let current_page = 1;
 const load = document.querySelector(".load");
+const loader = document.querySelector(".loader")
 const container = document.querySelector(".product-list");
 const url = container.getAttribute("data-url");
 const form = document.querySelector(".product-search-form");
@@ -16,11 +17,17 @@ function search_product(e) {
     current_page = 1;
     search_value = e.target.name.value;
     get_products(e.target.name.value);
-    form.reset();
+    container.innerHTML = "";
+    load.classList.add("hidden");
+    loader.classList.remove("hidden");
 }
 
 function get_products(name = "") {
-    fetch(`${url}?page=${current_page}&name=${name}`).then(res => res.json()).then(make_markup).catch(
+    fetch(`${url}?page=${current_page}&name=${name}`).then(res => res.json()).then(res => {
+        make_markup(res);
+        loader.classList.add("hidden")
+    }
+    ).catch(
         err => {
             console.clear()
         }
@@ -66,6 +73,7 @@ function make_markup(products) {
 
 function load_more() {
     load.classList.add("hidden")
+    loader.classList.remove("hidden")
     current_page += 1;
     get_products(search_value);
 }

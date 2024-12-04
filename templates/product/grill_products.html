@@ -16,6 +16,7 @@
       </form>
       <ul class="product-list" data-url="{% url "product:json-grill-products" %}"></ul>
       <button class="load hidden">Load More</button>
+      <img src="{% static "img/preloader.gif" %}" alt="loader" class="loader">
       <script src="{% static "js/product-list.js" %}"></script>
     </div>
   </section>
