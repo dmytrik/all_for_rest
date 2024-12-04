@@ -95,7 +95,12 @@ class BrandListView(LoginRequiredMixin, generic.ListView):
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super(BrandListView, self).get_context_data(**kwargs)
-        context["search_form"] = BrandSearchForm()
+        name = self.request.GET.get("name", "")
+        context["search_form"] = BrandSearchForm(
+            initial={
+                "name": name
+            }
+        )
         return context
 
     def get_queryset(self):
