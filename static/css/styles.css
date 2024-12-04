@@ -98,6 +98,7 @@ header .wrapper {
     color: #ffffff;
     border-radius: 15px;
     border-color: transparent;
+    cursor: pointer;
 }
 
 .nav-item.log {
@@ -252,6 +253,13 @@ header .wrapper {
     border-color:transparent;
 }
 
+.loader {
+    display: block;
+    margin: 50px auto 0px auto;
+    width: 100px;
+    height: 100px;
+}
+
 .load:hover{
     cursor: pointer;
 }
@@ -334,7 +342,7 @@ header .wrapper {
 }
 
 .update-btn {
-    background-image: linear-gradient(to right, blue, dodgerblue);
+    background-image: linear-gradient(to right, darkgrey, grey);
     background-color: dodgerblue;
 }
 

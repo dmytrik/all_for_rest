@@ -1,73 +1,119 @@
-All 4 Rest 
+# All 4 Rest
 
-This project is a system designed for managing products, brands,
-and their associated managers in the context of "All 4 Rest." 
-It includes features for handling product types, brand information, 
-and positions within the organization.
+Welcome to **All 4 Rest** — a robust system for managing products, brands, and their managers, tailored to support diverse organizational roles. This platform streamlines handling product types, brand information, and hierarchical positions within the organization.  
+Link on live page: https://all-for-rest.onrender.com/  
+**User for testing:** login - oleh, password - oleh1234  
+**Note:** This user is grill seller, so he can change only grill products, but no delete. Delete product can only superuser.  
 
-Database Structure Overview
 
-![Screenshot 2024-12-01 at 20.19.36.png](../../Desktop/Screenshot%202024-12-01%20at%2020.19.36.png)
 
-The project is built around the following key models:
+---
 
-1. Position
-Represents the roles in the system (e.g., furniture seller, grill seller, camping seller).
-Fields:
-    name (Choice Field: furniture seller, grill seller, camping seller)
+## 📖 Overview
 
-2. Manager (AbstractUser)
-Extends Django's AbstractUser to represent users who manage products and brands.
-Fields:
-    position (Foreign Key to Position)
-    username, password, email, first_name, last_name (inherited from AbstractUser)
+"All 4 Rest" simplifies the management of:
+- Product types
+- Brand details
+- Organizational roles and positions
 
-3. Brand
-Stores details about brands associated with products.
-Fields:
-    name
-    country
+The system is designed with scalability and clarity in mind, ensuring efficient management of business operations.
 
-4. Product
+---
+
+## 🗂️ Database Structure
+
+Here's an overview of the project's database design:
+
+<img width="1184" alt="Screenshot 2024-12-01 at 20 19 36" src="https://github.com/user-attachments/assets/49758279-c84f-4e25-baaf-6bf693a793ff">
+---
+
+## Models
+
+### 1. **Position**
+Defines roles within the system, such as:
+- Furniture Seller
+- Grill Seller
+- Camping Seller
+
+**Fields:**
+- `name` (Choice Field)
+
+---
+
+### 2. **Manager (AbstractUser)**
+Extends Django's `AbstractUser` to represent individuals managing products and brands.
+
+**Fields:**
+- `position` (Foreign Key to `Position`)
+- Inherited: `username`, `password`, `email`, `first_name`, `last_name`
+
+---
+
+### 3. **Brand**
+Stores brand details related to products.
+
+**Fields:**
+- `name`
+- `country`
+
+---
+
+### 4. **Product**
 Represents individual products under specific brands.
-Fields:
-    name
-    price
-    brand (Foreign Key to Brand)
-    description
-    type (Foreign Key to ProductType)
-    photo
 
-5. ProductType
-Categorizes products into types (e.g., garden furniture, grill products, camping products).
-Fields:
-    name (Choice Field: garden furniture, grill products, camping products)
-    managers (Foreign Key to Manager)
+**Fields:**
+- `name`
+- `price`
+- `brand` (Foreign Key to `Brand`)
+- `description`
+- `type` (Foreign Key to `ProductType`)
+- `photo`
 
+---
 
-Installation Steps
+### 5. **ProductType**
+Categorizes products into types, such as:
+- Garden Furniture
+- Grill Products
+- Camping Products
 
-1. Clone the Repository:
-git clone <repository_url>
+**Fields:**
+- `name` (Choice Field)
+- `managers` (Foreign Key to `Manager`)
 
-2. Create a Virtual Environment:
-python -m venv env
-source env/bin/activate  # For Linux/Mac
-env\Scripts\activate     # For Windows
+---
 
-3. Install Dependencies:
-pip install -r requirements.txt
+## 🚀 Installation
 
-4. Run Migrations:
-python manage.py makemigrations
-python manage.py migrate
+Follow these steps to set up the project locally:
 
-5. Create a Superuser:
-python manage.py createsuperuser
+1. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/dmytrik/all_for_rest.git
 
-6. Run the Development Server:
-python manage.py runserver
+2. **Create a Virtual Environment:**
+   ```bash
+   python -m venv env
+   source env/bin/activate       # Linux/Mac
+   env\Scripts\activate          # Windows 
 
-7. Optional: Load Initial Data
-You can load predefined positions, product types, or brands using fixtures:
-python manage.py loaddata initial_data.json
+3. **Install Dependencies:**
+   ```bash
+   pip install -r requirements.txt
+
+4. **Run Migrations:**
+   ```bash
+   python manage.py makemigrations
+   python manage.py migrate
+
+5. **Create a Superuser:**
+   ```bash
+   python manage.py createsuperuser
+
+6. **Start the Development Server:**
+   ```bash
+   python manage.py runserver
+
+7. **Initial Data Load:**
+   ```bash
+   python manage.py loaddata initial_data.json
