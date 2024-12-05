@@ -1,5 +1,5 @@
 from django.core.paginator import Paginator
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpRequest
 from django.views import View
 
 from product.models import Product
@@ -8,12 +8,12 @@ COUNT_OF_PRODUCTS = 9
 
 
 class JsonFurnitureResponse(View):
-    @staticmethod
-    def get(request):
+
+    def get(self, request: HttpRequest) -> JsonResponse:
         page = request.GET.get("page")
         name = request.GET.get("name")
-        queryset = Product.objects.select_related("brand")
-        queryset = queryset.filter(type__name="garden_furniture")
+        queryset = (Product.objects.select_related("brand").
+                    filter(type__name="garden_furniture"))
         if name:
             queryset = queryset.filter(name__icontains=name)
         paginator = Paginator(queryset, COUNT_OF_PRODUCTS)
@@ -36,12 +36,12 @@ class JsonFurnitureResponse(View):
 
 
 class JsonGrillProductsResponse(View):
-    @staticmethod
-    def get(request):
+
+    def get(self, request: HttpRequest) -> JsonResponse:
         page = request.GET.get("page")
         name = request.GET.get("name")
-        queryset = Product.objects.select_related("brand")
-        queryset = queryset.filter(type__name="grill_products")
+        queryset = (Product.objects.select_related("brand").
+                    filter(type__name="grill_products"))
         if name:
             queryset = queryset.filter(name__icontains=name)
         paginator = Paginator(queryset, COUNT_OF_PRODUCTS)
@@ -64,12 +64,12 @@ class JsonGrillProductsResponse(View):
 
 
 class JsonCampingProductsResponse(View):
-    @staticmethod
-    def get(request):
+
+    def get(self, request: HttpRequest) -> JsonResponse:
         page = request.GET.get("page")
         name = request.GET.get("name")
-        queryset = Product.objects.select_related("brand")
-        queryset = queryset.filter(type__name="camping_products")
+        queryset = (Product.objects.select_related("brand").
+                    filter(type__name="camping_products"))
         if name:
             queryset = queryset.filter(name__icontains=name)
         paginator = Paginator(queryset, COUNT_OF_PRODUCTS)

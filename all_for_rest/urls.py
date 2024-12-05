@@ -20,7 +20,7 @@ from django.conf.urls import include
 from debug_toolbar.toolbar import debug_toolbar_urls
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path("admin/", admin.site.urls),
     path("", include("product.urls", namespace="product")),
     path("managers/", include("accounts.urls", namespace="accounts")),
     path("accounts/", include("django.contrib.auth.urls"))

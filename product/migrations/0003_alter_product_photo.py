@@ -7,13 +7,13 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('product', '0002_alter_product_photo'),
+        ("product", "0002_alter_product_photo"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='product',
-            name='photo',
-            field=django_resized.forms.ResizedImageField(blank=True, crop=None, force_format='WEBP', keep_meta=True, null=True, quality=75, scale=None, size=[1920, 1080], upload_to='photos/'),
+            model_name="product",
+            name="photo",
+            field=django_resized.forms.ResizedImageField(blank=True, crop=None, force_format="WEBP", keep_meta=True, null=True, quality=75, scale=None, size=[1920, 1080], upload_to="photos/"),
         ),
     ]

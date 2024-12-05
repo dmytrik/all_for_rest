@@ -25,4 +25,3 @@ class BrandSearchForm(forms.Form):
             }
         )
     )
-

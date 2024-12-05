@@ -15,34 +15,34 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Brand',
+            name="Brand",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=255, unique=True)),
-                ('country', models.CharField(max_length=255)),
+                ("id", models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name="ID")),
+                ("name", models.CharField(max_length=255, unique=True)),
+                ("country", models.CharField(max_length=255)),
             ],
             options={
-                'ordering': ['name'],
+                "ordering": ["name"],
             },
         ),
         migrations.CreateModel(
-            name='ProductType',
+            name="ProductType",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(choices=[('garden_furniture', 'garden_furniture'), ('grill_products', 'grill_products'), ('camping_products', 'camping_products')], default='garden_furniture', max_length=255, unique=True)),
-                ('managers', models.ManyToManyField(related_name='types_products', to=settings.AUTH_USER_MODEL)),
+                ("id", models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name="ID")),
+                ("name", models.CharField(choices=[("garden_furniture", "garden_furniture"), ("grill_products", "grill_products"), ("camping_products", "camping_products")], default="garden_furniture", max_length=255, unique=True)),
+                ("managers", models.ManyToManyField(related_name="types_products", to=settings.AUTH_USER_MODEL)),
             ],
         ),
         migrations.CreateModel(
-            name='Product',
+            name="Product",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=255)),
-                ('price', models.PositiveIntegerField()),
-                ('description', models.TextField()),
-                ('photo', models.ImageField(null=True, upload_to='photos/')),
-                ('brand', models.ForeignKey(null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='products', to='product.brand')),
-                ('type', models.ForeignKey(null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='products', to='product.producttype')),
+                ("id", models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name="ID")),
+                ("name", models.CharField(max_length=255)),
+                ("price", models.PositiveIntegerField()),
+                ("description", models.TextField()),
+                ("photo", models.ImageField(null=True, upload_to="photos/")),
+                ("brand", models.ForeignKey(null=True, on_delete=django.db.models.deletion.SET_NULL, related_name="products", to="product.brand")),
+                ("type", models.ForeignKey(null=True, on_delete=django.db.models.deletion.SET_NULL, related_name="products", to="product.producttype")),
             ],
         ),
     ]

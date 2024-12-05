@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, include
 from product.views import (
     Index,
     FurnitureSetsView,
@@ -21,35 +21,53 @@ from product.views_json_response import (
 )
 
 
+json_patterns = [
+    path(
+        "json-sets/",
+        JsonFurnitureResponse.as_view(),
+        name="json-sets"
+    ),
+    path(
+        "json-camping-products/",
+        JsonCampingProductsResponse.as_view(),
+        name="json-camping-products"
+    ),
+    path(
+        "json-grill-products/",
+        JsonGrillProductsResponse.as_view(),
+        name="json-grill-products"
+    )
+]
+
 urlpatterns = [
     path("", Index.as_view(), name="index"),
     path(
-        "furniture_sets/",
+        "furniture-sets/",
         FurnitureSetsView.as_view(),
         name="furniture_sets"
     ),
     path(
-        "grill_products/",
+        "grill-products/",
         GrillProductsView.as_view(),
         name="grill_products"
     ),
     path(
-        "camping_products/",
+        "camping-products/",
         CampingProductsView.as_view(),
         name="camping_products"
     ),
     path(
-        "furniture_sets/<int:pk>/",
+        "furniture-sets/<int:pk>/",
         ProductDetailView.as_view(),
         name="product-detail"
     ),
     path(
-        "grill_products/<int:pk>/",
+        "grill-products/<int:pk>/",
         ProductDetailView.as_view(),
         name="product-detail"
     ),
     path(
-        "camping_products/<int:pk>/",
+        "camping-products/<int:pk>/",
         ProductDetailView.as_view(),
         name="product-detail"
     ),
@@ -84,38 +102,22 @@ urlpatterns = [
         name="brand-detail"
     ),
     path(
-        "brands/<int:pk>/update",
+        "brands/<int:pk>/update/",
         BrandUpdateView.as_view(),
         name="brand-update"
     ),
     path(
-        "brands/<int:pk>/delete",
+        "brands/<int:pk>/delete/",
         BrandDeleteView.as_view(),
         name="brand-delete"
     ),
     path(
-        "brands/create",
+        "brands/create/",
         BrandCreateView.as_view(),
         name="brand-create"
     ),
+    path("json/", include(json_patterns))
 ]
 
-urlpatterns.extend([
-    path(
-        "json-sets/",
-        JsonFurnitureResponse.as_view(),
-        name="json-sets"
-    ),
-    path(
-        "json-camping-products/",
-        JsonCampingProductsResponse.as_view(),
-        name="json-camping-products"
-    ),
-    path(
-        "json-grill-products/",
-        JsonGrillProductsResponse.as_view(),
-        name="json-grill-products"
-    )
-])
 
 app_name = "product"

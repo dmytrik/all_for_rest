@@ -11,8 +11,7 @@ from product.forms import ProductSearchForm, BrandSearchForm
 
 class Index(LoginRequiredMixin, View):
 
-    @staticmethod
-    def get(request: HttpRequest) -> HttpResponse:
+    def get(self, request: HttpRequest) -> HttpResponse:
 
         count_of_products = Product.objects.count()
         count_of_brands = Brand.objects.count()
@@ -29,8 +28,7 @@ class Index(LoginRequiredMixin, View):
 
 class FurnitureSetsView(LoginRequiredMixin, View):
 
-    @staticmethod
-    def get(request: HttpRequest) -> HttpResponse:
+    def get(self, request: HttpRequest) -> HttpResponse:
         context = {
             "form": ProductSearchForm()
         }
@@ -39,8 +37,7 @@ class FurnitureSetsView(LoginRequiredMixin, View):
 
 class GrillProductsView(LoginRequiredMixin, View):
 
-    @staticmethod
-    def get(request: HttpRequest) -> HttpResponse:
+    def get(self, request: HttpRequest) -> HttpResponse:
         context = {
             "form": ProductSearchForm()
         }
@@ -49,8 +46,7 @@ class GrillProductsView(LoginRequiredMixin, View):
 
 class CampingProductsView(LoginRequiredMixin, View):
 
-    @staticmethod
-    def get(request: HttpRequest) -> HttpResponse:
+    def get(self, request: HttpRequest) -> HttpResponse:
         context = {
             "form": ProductSearchForm()
         }
@@ -62,12 +58,14 @@ class ProductDetailView(LoginRequiredMixin, generic.DetailView):
 
     def get_context_data(self, **kwargs):
         context = super(ProductDetailView, self).get_context_data(**kwargs)
-        condition = ((self.request.user.position == "furniture_seller"
-                      and self.object.type.name == "garden_furniture")
-                     or (self.request.user.position == "grill_seller"
-                         and self.object.type.name == "grill_products")
-                     or (self.request.user.position == "camping_seller"
-                         and self.object.type.name == "camping_products"))
+        condition_dict = {
+            "furniture_seller": "garden_furniture",
+            "grill_seller": "grill_products",
+            "camping_seller": "camping_products"
+        }
+        condition = (
+                condition_dict[self.request.user.position] == self.object.type.name
+        )
         context["condition"] = condition
         return context
 
