@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block title %}
+    <title>ALL4REST | Managers</title>
+{% endblock %}
+
+{% block content %}
+  <div class="section">
+    <div class="wrapper">
+      <form action="" class="product-search-form">
+        {% csrf_token %}
+        {% render_field search_form.username class+="search-input" %}
+        <input type="submit" value="Search" class="search-btn">
+      </form>
+      <ul class="manager-list">
+      {% for manager in manager_list %}
+      <li class="manager-item">
+        <div class="img-container">
+          <img src="{% static 'img/manager.webp' %}" alt="photo" class = "product-img">
+        </div>
+        <div class="info-container">
+          <p class="manager-info">{{ manager.username }} {% if user.id == manager.id %}(Me){% endif %}</p>
+          <p class="manager-info">{{ manager.position }}</p>
+          <a href="{% url 'accounts:manager-detail' pk=manager.id %}" class="manager-info" style="color: darkolivegreen">More info...</a>
+        </div>
+      </li>
+      {% endfor %}
+      </ul>
+      {% block pagination %}
+        {% include "includes/pagination.html" %}
+        {% endblock %}
+      </div>
+  </div>
+{% endblock %}

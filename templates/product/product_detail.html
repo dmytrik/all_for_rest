@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    <title>ALL4REST | {{ product.name }}</title>
+{% endblock %}
+
+{% block content %}
+  <section class="section">
+    <div class="wrapper">
+      <div class="detail-image-container">
+        <img src="{{ product.photo.url }}" alt="picture" class="product-img-detail">
+      </div>
+      <div class="product-about">
+        <p class="product-info" style="color:darkorange">{{ product.name }}</p>
+        <p class="product-info">{{ product.price }} грн</p>
+        <p class="product-info">{{ product.description }}</p>
+      </div>
+      <div class="options-container">
+        {% if condition %}
+          <a href="{% url 'product:product-update' pk=product.id %}" class="update-btn nav-btn">Update</a>
+          {% if user.is_staff %}
+          <a href="{% url 'product:product-delete' pk=product.id %}" class="delete-btn nav-btn">Delete</a>
+          {% endif %}
+        {% endif %}
+      </div>
+      <h1 class="product-title">Managers</h1>
+      <ul class="manager-list manager-info-in-product-detail">
+      {% for manager in product.type.managers.all %}
+      <li class="manager-item">
+        <div class="img-container">
+          <img src="{% static 'img/manager.webp' %}" alt="photo" class = "product-img">
+        </div>
+        <div class="info-container">
+          <p class="manager-info">{{ manager.username }}</p>
+          <p class="manager-info">{{ manager.position }}</p>
+          <a href="{% url 'accounts:manager-detail' manager.id %}" class="manager-info" style="color: darkolivegreen">More info...</a>
+        </div>
+      </li>
+      {% endfor %}
+      </ul>
+    </div>
+  </section>
+{% endblock %}

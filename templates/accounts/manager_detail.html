@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    <title>ALL4REST | {{ manager.username }}</title>
+{% endblock %}
+
+{% block content %}
+  <section class="section">
+    <div class="wrapper">
+      <div class="manager-image-container">
+        <img src="{% static 'img/manager.webp' %}" alt="picture" class="manager-img-detail">
+      </div>
+      <div class="manager-about">
+        <p class="manager-info">{{ manager.username }}</p>
+        <p class="manager-info">{{ manager.position }}</p>
+        {% if user.id == manager.id %}
+        <a href="{% url 'accounts:manager-update' pk=manager.id %}" class="manager-upd-btn">Update</a>
+        {% endif %}
+      </div>
+      {% if products %}
+        <h1 class="section-title" style="margin-top: 15px">Products the manager sells</h1>
+        <ul class="product-list" style="margin-top: 15px">
+          {% for product in products %}
+            <li class="product-item">
+              <div class="img-container">
+                <img src="{{ product.photo.url }}" alt="photo" class="product-img">
+              </div>
+              <div class="info-container">
+                <p class="product-info" style="color: darkorange">{{ product.name }}</p>
+                <p class="product-info">{{ product.price }} грн</p>
+                <p class="product-info">{{ product.type }}</p>
+                <a href="{% url 'product:product-detail' pk=product.id %}" class="product-info product-link-info" style="color: darkolivegreen">More
+                  info...</a>
+              </div>
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </div>
+  </section>
+{% endblock %}
