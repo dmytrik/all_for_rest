@@ -1,6 +1,10 @@
 from django.contrib import admin
 
-from product.models import Product, ProductType, Brand
+from product.models import (
+    Product,
+    ProductType,
+    Brand
+)
 
 
 @admin.register(Product)

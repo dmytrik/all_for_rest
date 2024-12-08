@@ -2,10 +2,13 @@ import json
 
 from django.contrib.auth import get_user_model
 from django.urls import reverse
-
 from django.test import TestCase
 
-from product.models import ProductType, Product, Brand
+from product.models import (
+    ProductType,
+    Product,
+    Brand
+)
 
 FURNITURE_SETS_URL = reverse("product:furniture_sets")
 GRILL_PRODUCTS_URL = reverse("product:grill_products")

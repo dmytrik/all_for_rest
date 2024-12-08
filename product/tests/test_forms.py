@@ -1,9 +1,12 @@
 from django.contrib.auth import get_user_model
 from django.urls import reverse
-
 from django.test import TestCase
 
-from product.models import ProductType, Brand, Product
+from product.models import (
+    ProductType,
+    Brand,
+    Product
+)
 
 PRODUCT_CREATION_URL = reverse("product:product-create")
 BRAND_CREATION_URL = reverse("product:brand-create")

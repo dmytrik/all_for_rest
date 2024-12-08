@@ -42,11 +42,11 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "django_dropbox_storage",
-    "product",
-    "accounts",
     "debug_toolbar",
     "widget_tweaks",
-    "django_resized"
+    "django_resized",
+    "product",
+    "accounts",
 ]
 
 MIDDLEWARE = [

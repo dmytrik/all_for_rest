@@ -1,4 +1,8 @@
-from django.urls import path, include
+from django.urls import (
+    path,
+    include
+)
+
 from product.views import (
     Index,
     FurnitureSetsView,

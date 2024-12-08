@@ -16,7 +16,7 @@
       <ul class="brand-list">
         {% for brand in brand_list %}
           <li class="brand-item">
-            <a href="{% url "product:brand-detail" pk=brand.id %}" class="brand-link">
+            <a href="{% url 'product:brand-detail' pk=brand.id %}" class="brand-link">
               <p class="brand-info">{{ brand.name }}</p>
               <p class="brand-info">{{ brand.country }}</p>
             </a>

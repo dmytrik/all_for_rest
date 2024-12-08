@@ -18,12 +18,12 @@
       {% for manager in manager_list %}
       <li class="manager-item">
         <div class="img-container">
-          <img src="{% static "img/manager.webp" %}" alt="photo" class = "product-img">
+          <img src="{% static 'img/manager.webp' %}" alt="photo" class = "product-img">
         </div>
         <div class="info-container">
           <p class="manager-info">{{ manager.username }} {% if user.id == manager.id %}(Me){% endif %}</p>
           <p class="manager-info">{{ manager.position }}</p>
-          <a href="{% url "accounts:manager-detail" pk=manager.id %}" class="manager-info" style="color: darkolivegreen">More info...</a>
+          <a href="{% url 'accounts:manager-detail' pk=manager.id %}" class="manager-info" style="color: darkolivegreen">More info...</a>
         </div>
       </li>
       {% endfor %}

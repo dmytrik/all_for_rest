@@ -1,5 +1,8 @@
 from django.core.paginator import Paginator
-from django.http import JsonResponse, HttpRequest
+from django.http import (
+    JsonResponse,
+    HttpRequest
+)
 from django.views import View
 
 from product.models import Product

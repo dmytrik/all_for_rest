@@ -8,7 +8,7 @@
 {% block content %}
   <section class="section">
     <div class="wrapper">
-      <form action="{% url "login" %}" method="post" class="form">
+      <form action="{% url 'login' %}" method="post" class="form">
         {% csrf_token %}
         <label class="form-label">
           <p class="form-p">Username</p>
@@ -19,7 +19,7 @@
           {% render_field form.password placeholder="Password" class+="form-input" %}
         </label>
         <input type="submit" value="Submit" class="submit">
-        <a href="{% url "accounts:manager-create" %}" class="registr-in-login">Click here to SignUp</a>
+        <a href="{% url 'accounts:manager-create' %}" class="registr-in-login">Click here to SignUp</a>
       </form>
     </div>
   </section>

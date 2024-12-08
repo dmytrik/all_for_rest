@@ -18,9 +18,9 @@
       </div>
       <div class="options-container">
         {% if condition %}
-          <a href="{% url "product:product-update" pk=product.id %}" class="update-btn nav-btn">Update</a>
+          <a href="{% url 'product:product-update' pk=product.id %}" class="update-btn nav-btn">Update</a>
           {% if user.is_staff %}
-          <a href="{% url "product:product-delete" pk=product.id %}" class="delete-btn nav-btn">Delete</a>
+          <a href="{% url 'product:product-delete' pk=product.id %}" class="delete-btn nav-btn">Delete</a>
           {% endif %}
         {% endif %}
       </div>
@@ -29,12 +29,12 @@
       {% for manager in product.type.managers.all %}
       <li class="manager-item">
         <div class="img-container">
-          <img src="{% static "img/manager.webp" %}" alt="photo" class = "product-img">
+          <img src="{% static 'img/manager.webp' %}" alt="photo" class = "product-img">
         </div>
         <div class="info-container">
           <p class="manager-info">{{ manager.username }}</p>
           <p class="manager-info">{{ manager.position }}</p>
-          <a href="{% url "accounts:manager-detail" manager.id %}" class="manager-info" style="color: darkolivegreen">More info...</a>
+          <a href="{% url 'accounts:manager-detail' manager.id %}" class="manager-info" style="color: darkolivegreen">More info...</a>
         </div>
       </li>
       {% endfor %}

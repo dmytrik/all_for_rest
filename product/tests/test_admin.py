@@ -1,8 +1,16 @@
 from django.contrib.admin.sites import site
 from django.test import TestCase
 
-from product.admin import ProductAdmin, BrandAdmin, ProductTypeAdmin
-from product.models import Product, Brand, ProductType
+from product.admin import (
+    ProductAdmin,
+    BrandAdmin,
+    ProductTypeAdmin
+)
+from product.models import (
+    Product,
+    Brand,
+    ProductType
+)
 
 
 class ProductAdminTest(TestCase):
