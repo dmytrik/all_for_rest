@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block title %}
+    <title>ALL4REST | Garden Furniture</title>
+{% endblock %}
+
+{% block content %}
+  <section class="section">
+    <div class="wrapper">
+      <form action="" method="post" class="product-search-form">
+        {% csrf_token %}
+        {% render_field form.name class+="search-input" %}
+        <input type="submit" value="Search" class="search-btn">
+      </form>
+      <ul class="product-list" data-url="{% url 'product:json-sets' %}"></ul>
+      <button class="load hidden">Load More</button>
+      <img src="{% static 'img/preloader.gif' %}" alt="loader" class="loader">
+    </div>
+    <script src="{% static 'js/product-list.js' %}"></script>
+  </section>
+{% endblock %}

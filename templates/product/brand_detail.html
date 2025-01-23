@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}
+    <title>ALL4REST | {{ brand.name }}</title>
+{% endblock %}
+
+{% block content %}
+  <section class="section">
+    <div class="wrapper">
+      <div class="brand-title-box">
+        <h1 class="section-title">Brand {{ brand.name }}</h1>
+        {% if user.is_staff %}
+          <div class="brand-options-box">
+            <a href="{% url 'product:brand-update' brand.id %}" class="update-btn nav-btn">Update</a>
+            <a href="{% url 'product:brand-delete' brand.id %}" class="delete-btn nav-btn">Delete</a>
+          </div>
+        {% endif %}
+      </div>
+      {% if brand.products %}
+        <p class="brand-p">Products of this brand:</p>
+        <ul class="product-list">
+          {% for product in brand.products.all %}
+            <li class="product-item">
+              <div class="img-container">
+                <img src="{{ product.photo.url }}" alt="photo" class="product-img">
+              </div>
+              <div class="info-container">
+                <p class="product-info" style="color: darkorange">{{ product.name }}</p>
+                <p class="product-info">{{ product.price }} грн</p>
+                <p class="product-info">{{ product.type.name }}</p>
+                <a href="{% url 'product:product-detail' pk=product.id %}" class="product-info product-link-info" style="color: darkolivegreen">More
+                  info...</a>
+              </div>
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </div>
+  </section>
+{% endblock %}

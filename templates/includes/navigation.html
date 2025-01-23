@@ -1,0 +1,22 @@
+<nav class="nav">
+  <ul class="nav-list">
+    <li class="nav-item"><a href="{% url 'product:furniture_sets' %}" class="nav-link">Garden furniture set</a></li>
+    <li class="nav-item"><a href="{% url 'product:grill_products' %}" class="nav-link">Grill products</a></li>
+    <li class="nav-item"><a href="{% url 'product:camping_products' %}" class="nav-link">Camping products</a></li>
+    <li class="nav-item"><a href="{% url 'product:brand-list' %}" class="nav-link">Brands</a></li>
+    <li class="nav-item"><a href="{% url 'accounts:manager-list'%}" class="nav-link">Managers</a></li>
+  </ul>
+</nav>
+<ul class="nav-list">
+  {% if user.is_authenticated %}
+    <li class="nav-item">
+      <form action="{% url 'logout' %}" method="post">
+        {% csrf_token %}
+        <input type="submit" value="Logout" class="nav-btn logout">
+      </form>
+    </li>
+  {% else %}
+    <li class="nav-item log"><a href="{% url 'login' %}" class="nav-btn login">Login</a></li>
+    <li class="nav-item"><a href="{% url 'accounts:manager-create' %}" class="nav-btn registration">SignUp</a></li>
+  {% endif %}
+</ul>

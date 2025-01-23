@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load widget_tweaks %}
+
+{% block title %}
+    <title>ALL4REST</title>
+{% endblock %}
+
+{% block content %}
+  <section class="section">
+    <div class="wrapper">
+        <h1 class="form-title">{{ object|yesno:"Update,Create" }} product</h1>
+        <form action="" method="post" novalidate class="form product-form" enctype="multipart/form-data">
+          {% csrf_token %}
+          {{ form.non_field_errors }}
+          {{ form.errors }}
+          <label for="" class="form-label">
+            <p class="form-p">Name</p>
+            {% render_field form.name class+="form-input" %}
+          </label>
+          <label for="" class="form-label">
+            <p class="form-p">Price</p>
+            {% render_field form.price class+="form-input" %}
+          </label>
+          <label for="" class="form-label">
+            <p class="form-p">Brand</p>
+            {% render_field form.brand class+="form-input" %}
+          </label>
+          {% if form.type %}
+            <label for="" class="form-label">
+              <p class="form-p">Type</p>
+              {% render_field form.type class+="form-input" %}
+            </label>
+          {% endif %}
+          <label for="" class="form-label">
+            <p class="form-p">Description</p>
+            {% render_field form.description class+="form-area" %}
+          </label>
+          <label for="" class="form-label">
+            <p class="form-p">Photo</p>
+            {% render_field form.photo class+="form-input" %}
+          </label>
+          <input type="submit" value="Submit" class="submit">
+        </form>
+    </div>
+  </section>
+{% endblock %}

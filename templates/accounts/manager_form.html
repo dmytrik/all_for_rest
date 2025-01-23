@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load widget_tweaks %}
+
+{% block title %}
+    <title>ALL4REST</title>
+{% endblock %}
+
+{% block content %}
+   <section class="section">
+    <div class="wrapper">
+      <form action="" method="post" class="form">
+        {% csrf_token %}
+        {{ form.errors }}
+        <label class="form-label">
+          <p class="form-p">Username</p>
+          {% render_field form.username placeholder="username" class+="form-input" %}
+        </label>
+        {% if form.first_name %}
+        <label class="form-label">
+          <p class="form-p">First name</p>
+          {% render_field form.first_name placeholder="first name" class+="form-input" %}
+        </label>
+        {% endif %}
+        {% if form.last_name %}
+        <label class="form-label">
+          <p class="form-p">Last name</p>
+          {% render_field form.last_name placeholder="last_name" class+="form-input" %}
+        </label>
+        {% endif %}
+        {% if form.password1 %}
+        <label class="form-label">
+          <p class="form-p">Password</p>
+          {% render_field form.password1 placeholder="password" class+="form-input" %}
+        </label>
+        {% endif %}
+        {% if form.password2 %}
+        <label class="form-label">
+          <p class="form-p">Confirm password</p>
+          {% render_field form.password2 placeholder="confirm password" class+="form-input" %}
+        </label>
+        {% endif %}
+        <label class="form-label">
+          <p class="form-p">Position</p>
+          {% render_field form.position placeholder="position" class+="form-positions" %}
+        </label>
+        <input type="submit" value="Submit" class="submit">
+      </form>
+    </div>
+  </section>
+{% endblock %}
